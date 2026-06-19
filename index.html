@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Pop 投票通 (K-Pop Vote Hub)</title>
+    <!-- 引入 Tailwind CSS 雲端庫 -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-12">
 
+    <!-- APP 頂部導覽列 -->
     <header class="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 text-white shadow-md sticky top-0 z-50">
         <div class="max-w-md mx-auto px-4 py-4 flex flex-col items-center">
             <h1 class="text-xl font-bold tracking-wider flex items-center gap-2">
@@ -17,8 +19,10 @@
         </div>
     </header>
 
+    <!-- 主容器（限制最大寬度模擬手機 App 質感） -->
     <main class="max-w-md mx-auto px-4 mt-4">
         
+        <!-- 節目切換頁籤 (Tabs) -->
         <div class="grid grid-cols-4 gap-1 bg-white p-1.5 rounded-xl shadow-sm border border-slate-100 mb-6">
             <button onclick="switchTab('mcd')" id="tab-mcd" class="tab-btn py-2.5 text-xs font-bold rounded-lg text-center transition-all bg-indigo-600 text-white shadow-sm">
                 MCD
@@ -34,11 +38,13 @@
             </button>
         </div>
 
+        <!-- ==================== 一、Mnet M Countdown ==================== -->
         <section id="content-mcd" class="tab-content space-y-6">
             <div class="bg-indigo-50 border border-indigo-100 p-3 rounded-xl text-xs text-indigo-800">
                 <strong>📌 投票工具：</strong> Mnet Plus APP
             </div>
             
+            <!-- 事前投票 -->
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-base text-slate-900 flex items-center gap-1.5">
@@ -48,170 +54,188 @@
                 </div>
                 <p class="text-xs text-slate-500 mb-3"><strong>期間：</strong>每週六 00:00 ~ 每週二 23:59 (KST)<br><strong>限制：</strong>1 台裝置可投 <span class="text-pink-600 font-bold">5 票</span></p>
                 
+                <!-- 示意圖一 -->
+                <div class="mb-4">
+                    <p class="text-[11px] text-slate-400 mb-1">📷 事前投票流程對照圖：</p>
+                    <img src="HKtvHfBbsAAbmTk.jpg" alt="MCD 事前投票" class="w-full rounded-xl shadow-sm border border-slate-100">
+                </div>
+
+                <!-- 步驟 -->
                 <div class="space-y-4 text-xs">
                     <div class="flex gap-3">
                         <div class="flex-none w-5 h-5 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-[10px]">1</div>
-                        <p class="text-slate-700">點選首頁時間倒數橫幅，進入事前投票頁面。</p>
+                        <p class="text-slate-700">點選時間倒數橫幅進入事前投票。</p>
                     </div>
                     <div class="flex gap-3">
                         <div class="flex-none w-5 h-5 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-[10px]">2</div>
-                        <p class="text-slate-700">於候選名單中尋找並點選目標藝人（如：BOYNEXTDOOR）。</p>
+                        <p class="text-slate-700">於選單尋找 <strong>BOYNEXTDOOR</strong>。</p>
                     </div>
                     <div class="flex gap-3">
                         <div class="flex-none w-5 h-5 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-[10px]">3</div>
-                        <p class="text-slate-700">選擇歌曲（如：VIRAL），勾選「選擇該候選人後繼續投票」與「[必選] 同意個人信息收集使用」，點擊 <strong>提交投票</strong>。</p>
+                        <p class="text-slate-700">選擇 <strong>BOYNEXTDOOR - VIRAL</strong> 並提交投票。</p>
                     </div>
                     <div class="flex gap-3">
                         <div class="flex-none w-5 h-5 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-[10px]">4</div>
-                        <p class="text-slate-700">出現粉色勾勾完成畫面即成功！畫面會更新剩餘票數，可點擊「查看投票認證書」。</p>
+                        <p class="text-slate-700">出現完成畫面即代表投票成功！</p>
                     </div>
                 </div>
             </div>
 
+            <!-- 實時投票 -->
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-base text-slate-900 flex items-center gap-1.5">
                         <span class="w-2 h-4 bg-purple-600 rounded-full"></span> 2. 實時一位投票 (Live Vote)
                     </h3>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">每週四直播時段</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">每週死直播時段</span>
                 </div>
                 <p class="text-xs text-slate-500 mb-3"><strong>限制：</strong>1 台裝置可投 <span class="text-purple-600 font-bold">5 回</span></p>
+                
+                <!-- 示意圖二 -->
+                <div class="mb-4">
+                    <p class="text-[11px] text-slate-400 mb-1">📷 實時投票畫面參考：</p>
+                    <img src="messageImage_1781541724783.jpg" alt="MCD 實時投票" class="w-full rounded-xl shadow-sm border border-slate-100">
+                </div>
+
                 <div class="space-y-3 text-xs">
                     <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
-                        <span class="font-bold text-purple-600">步驟 1：</span>直播時段開啟 App，點選帶有 <span class="bg-red-500 text-white px-1 text-[10px] rounded font-bold">LIVE</span> 標籤的 <strong>M COUNTDOWN LIVE VOTE</strong> 橫幅。
+                        <span class="font-bold text-purple-600">步驟 1：</span>直播時段開啟 App，點選帶有 LIVE 紅色標籤的 <strong>M COUNTDOWN LIVE VOTE</strong> 橫幅。
                     </div>
                     <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
-                        <span class="font-bold text-purple-600">步驟 2：</span>進入一對一 (VS) 決賽候補畫面，直接點擊支持的藝人頭像與歌曲完成即時投票。
+                        <span class="font-bold text-purple-600">步驟 2：</span>進入決賽候補畫面，直接點擊支持的藝人頭像與歌曲完成即時投票。
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ==================== 二、KBS Music Bank ==================== -->
         <section id="content-mb" class="tab-content space-y-6 hidden">
             <div class="bg-blue-50 border border-blue-100 p-3 rounded-xl text-xs text-blue-800">
                 <strong>📌 投票工具：</strong> Fancast APP | <strong>直播：</strong>每週五 17:00
             </div>
 
-            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                <h3 class="font-bold text-sm text-slate-900 mb-3 flex items-center gap-1">📊 節目計分比例</h3>
-                <div class="grid grid-cols-5 text-center text-xs gap-1">
-                    <div class="bg-slate-50 p-2 rounded"><div class="text-slate-400 transform scale-90">音源</div><div class="font-bold text-slate-700">60%</div></div>
-                    <div class="bg-slate-50 p-2 rounded"><div class="text-slate-400 transform scale-90">音盤</div><div class="font-bold text-slate-700">5%</div></div>
-                    <div class="bg-slate-50 p-2 rounded"><div class="text-slate-400 transform scale-90">SNS</div><div class="font-bold text-slate-700">5%</div></div>
-                    <div class="bg-slate-50 p-2 rounded"><div class="text-slate-400 transform scale-90">放送</div><div class="font-bold text-slate-700">20%</div></div>
-                    <div class="bg-blue-50 p-2 rounded border border-blue-200"><div class="text-blue-500 transform scale-90 font-bold">投票</div><div class="font-bold text-blue-700">10%</div></div>
-                </div>
-            </div>
-
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 space-y-3 text-xs">
-                <h3 class="font-bold text-base text-slate-900 border-b border-slate-100 pb-2 flex items-center gap-1.5">
-                    <span class="w-2 h-4 bg-blue-500 rounded-full"></span> 事前投票規則
+            <!-- 計分與對照總圖 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-base text-slate-900 border-b border-slate-100 pb-2 mb-3 flex items-center gap-1.5">
+                    <span class="w-2 h-4 bg-blue-500 rounded-full"></span> 節目配點與規則參考
                 </h3>
-                <p class="text-slate-600"><strong>⏰ 投票期間：</strong>每週日 15:00 ~ 每週三 11:00 (KST)</p>
-                <p class="text-slate-600"><strong>💎 投票消耗：</strong>1 票 = 50 藍心(💙) 或 黃心(💛)</p>
                 
-                <div class="bg-slate-50 p-3 rounded-xl space-y-2 text-slate-700 border border-slate-100">
-                    <p class="flex items-start gap-1"><span>•</span> <span>單次最大可投 <strong>500 票</strong>。</span></p>
-                    <p class="flex items-start gap-1"><span>•</span> <span>設有 <strong>10 分鐘冷卻時間</strong>（重覆投票需間隔）。</span></p>
-                    <p class="flex items-start gap-1"><span>•</span> <span class="text-blue-600 font-bold">總投票次數無限制！</span></p>
+                <div class="mb-4">
+                    <p class="text-[11px] text-slate-400 mb-1">📷 音樂節目配點總覽圖：</p>
+                    <!-- 使用百分比編碼處理檔名中的空白與中文字 -->
+                    <img src="%E5%8A%A9%E6%95%99%E7%94%A8%20(1600%20x%201200%20%E5%83%8F%E7%B4%A0)%20(3).jpg" alt="節目配點總覽" class="w-full rounded-xl shadow-sm border border-slate-100">
                 </div>
-                <p class="text-[11px] text-slate-400 italic">💡 藍心使用期限為 30 天；黃心需付費取得。</p>
+
+                <div class="space-y-2 text-xs">
+                    <p class="text-slate-600"><strong>⏰ 投票期間：</strong>每週日 15:00 ~ 每週三 11:00 (KST)</p>
+                    <p class="text-slate-600"><strong>💎 投票消耗：</strong>1 票 = 50 藍心(💙) 或 黃心(💛)</p>
+                    <div class="bg-slate-50 p-3 rounded-xl space-y-1.5 text-slate-700 border border-slate-100 mt-2">
+                        <p>• 單次最大可投 <strong>500 票</strong>。</p>
+                        <p>• 設有 <strong>10 分鐘冷卻時間</strong>。</p>
+                        <p class="text-blue-600 font-bold">• 總投票次數無限制！</p>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- ==================== 三、MBC Show! Music Core ==================== -->
         <section id="content-mc" class="tab-content space-y-6 hidden">
             <div class="bg-emerald-50 border border-emerald-100 p-3 rounded-xl text-xs text-emerald-800">
                 <strong>📌 投票工具：</strong> Mubeat APP / Muniverse APP | <strong>直播：</strong>每週六 15:15
             </div>
 
-            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-xs">
-                <h3 class="font-bold text-sm text-slate-900 mb-2">📊 計分比例</h3>
-                <p class="text-slate-600 leading-relaxed">
-                    音源 50% | 音盤 10% | SNS 10% | 放送 10% | <span class="text-emerald-600 font-bold">事前投票 10%</span> | <span class="text-teal-600 font-bold">實時投票 10%</span> <span class="text-slate-400 text-[10px]">(APP 6% + 簡訊 4%)</span>
-                </p>
-            </div>
-
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 text-xs space-y-2">
-                <h3 class="font-bold text-base text-slate-900 border-b border-slate-100 pb-2 text-emerald-700">1. 事前投票 (Pre-Vote)</h3>
-                <p class="text-slate-500"><strong>期間：</strong>每週二 18:00 ~ 每週四 11:00 (KST)</p>
-                <p class="text-slate-500"><strong>限制：</strong>投票數<span class="text-emerald-600 font-bold">無限制</span></p>
-                <div class="grid grid-cols-2 gap-2 mt-2">
-                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                        <div class="font-bold text-slate-800 mb-1">Mubeat</div>
-                        <p class="text-slate-500 scale-95 origin-left">1 票 = 3 HeartBeats<br><span class="text-[10px] text-slate-400">(期限 90 天)</span></p>
-                    </div>
-                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                        <div class="font-bold text-slate-800 mb-1">Muniverse</div>
-                        <p class="text-slate-500 scale-95 origin-left">1 票 = 5 AdLumy<br><span class="text-[10px] text-slate-400">(期限 60 天)</span></p>
-                    </div>
+            <!-- 事前與實時投票 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 text-xs space-y-4">
+                <h3 class="font-bold text-base text-slate-900 border-b border-slate-100 pb-2 flex items-center gap-1.5">
+                    <span class="w-2 h-4 bg-emerald-500 rounded-full"></span> 音樂中心投票規則
+                </h3>
+                
+                <div class="mb-2">
+                    <p class="text-[11px] text-slate-400 mb-1">📷 音樂節目配點總覽圖：</p>
+                    <img src="%E5%8A%A9%E6%95%99%E7%94%A8%20(1600%20x%201200%20%E5%83%8F%E7%B4%A0)%20(3).jpg" alt="節目配點總覽" class="w-full rounded-xl shadow-sm border border-slate-100">
                 </div>
-            </div>
 
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 text-xs space-y-2">
-                <h3 class="font-bold text-base text-slate-900 border-b border-slate-100 pb-2 text-teal-700">2. 實時一位投票 (Live Vote)</h3>
-                <p class="text-slate-500"><strong>期間：</strong>每週六節目現場生放送期間</p>
-                <p class="text-slate-500"><strong>限制：</strong>每個 APP 最大可投 <span class="text-teal-600 font-bold">5 票</span>（可使用付費票）</p>
-                <div class="space-y-2 mt-2 text-slate-600">
-                    <p class="bg-slate-50 p-2 rounded"><strong>Mubeat 投滿 5 票：</strong>需共消耗 150 HeartBeats (30/票)</p>
-                    <p class="bg-slate-50 p-2 rounded"><strong>Muniverse 投滿 5 票：</strong>需共消耗 250 AdLumy (50/票)</p>
+                <div class="space-y-3">
+                    <p class="text-slate-700"><strong>🟢 1. 事前投票 (Pre-Vote)：</strong>每週二 18:00 ~ 每週四 11:00 (KST)，投票數無限制。</p>
+                    <p class="text-slate-700 pl-4 text-slate-500">• Mubeat：1 票 = 3 HeartBeats (90天期限)</p>
+                    <p class="text-slate-700 pl-4 text-slate-500">• Muniverse：1 票 = 5 AdLumy (60天期限)</p>
+                    
+                    <p class="text-slate-700 pt-2"><strong>🔵 2. 實時一位投票 (Live Vote)：</strong>生放送期間，每 APP 限投 5 票。</p>
+                    <p class="text-slate-700 pl-4 text-slate-500">• Mubeat 投滿 5 票共需 150 HeartBeats</p>
+                    <p class="text-slate-700 pl-4 text-slate-500">• Muniverse 投滿 5 票共需 250 AdLumy</p>
                 </div>
             </div>
         </section>
 
+        <!-- ==================== 四、SBS Inkigayo ==================== -->
         <section id="content-inki" class="tab-content space-y-6 hidden">
             <div class="bg-rose-50 border border-rose-100 p-3 rounded-xl text-xs text-rose-800">
                 <strong>📌 直播時間：</strong>每週日 15:20 | <strong>權重：</strong>事前 5% + 實時 5%
             </div>
 
+            <!-- 事前投票 -->
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-base text-slate-900 text-rose-600">1. 事前投票 — LiNC APP</h3>
                     <span class="text-[10px] bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full font-medium">每日重置</span>
                 </div>
-                <p class="text-xs text-slate-500 mb-3"><strong>期間：</strong>每週二 18:00 ~ 每週五 23:59 (KST)<br><strong>限制：</strong>每日上限 <span class="text-rose-600 font-bold">10 票</span> (00:00重置)<br><strong>消耗：</strong>1 票 = 15 粉絲點數(P) 或 5 寶石(Gem)</p>
+                <p class="text-xs text-slate-500 mb-3"><strong>期間：</strong>每週二 18:00 ~ 每週五 23:59 (KST)<br><strong>限制：</strong>每日上限 <span class="text-rose-600 font-bold">10 票</span><br><strong>消耗：</strong>1 票 = 15 粉絲點數(P) 或 5 寶石(Gem)</p>
                 
-                <div class="space-y-3.5 text-xs">
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 1</span><p class="text-slate-700">開啟 LiNC APP，首頁點選「SBS Inkigayo 事前投票」橫幅中的 <strong>투表하기 (投票)</strong>。</p></div>
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 2</span><p class="text-slate-700">在候補名單中勾選目標藝人（如：BOYNEXTDOOR），點選下方紅色 <strong>투表하기 (投票)</strong>。</p></div>
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 3</span><p class="text-slate-700">使用按鈕調整票數 (1~10 票)，選擇使用「粉絲點數 (P)」或「寶石 (Gem)」，再按下方 <strong>투表하기 (投票)</strong>。</p></div>
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 4</span><p class="text-slate-700">出現粉色打勾完成畫面即成功。下方會顯示今日剩餘可用票數（如：0/10）。</p></div>
+                <!-- 示意圖三 -->
+                <div class="mb-4">
+                    <p class="text-[11px] text-slate-400 mb-1">📷 LiNC APP 事前投票流程：</p>
+                    <img src="S__126132227.jpg" alt="Inkigayo 事前投票" class="w-full rounded-xl shadow-sm border border-slate-100">
                 </div>
-                <div class="mt-4 p-3 bg-amber-50 text-amber-800 border border-amber-100 rounded-xl text-[11px]">
-                    💡 <strong>免費獲取：</strong> 粉絲點數 (P) 可透過觀看廣告、每日簽到等方式免費獲得；寶石 (Gem) 則需付費購買。
+
+                <div class="space-y-3.5 text-xs">
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 1</span><p class="text-slate-700">開啟 LiNC APP，在首頁「SBS Inkigayo 事前投票」區塊點選 <strong>투표하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 2</span><p class="text-slate-700">在候補名單中選擇 <strong>BOYNEXTDOOR (VIRAL)</strong>，並點選下方 <strong>투표하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 3</span><p class="text-slate-700">選擇票數（1~10票），選擇使用「粉絲點數(P)」或「寶石(Gem)」後，點選 <strong>투표하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 4</span><p class="text-slate-700">出現完成畫面代表投票成功！每個帳號每天投 10 票。</p></div>
                 </div>
             </div>
 
+            <!-- 實時投票 -->
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
                 <h3 class="font-bold text-base text-slate-900 border-b border-slate-100 pb-2 text-purple-700 mb-3">2. 實時一位投票 — Higher APP</h3>
-                <p class="text-xs text-slate-500 mb-3"><strong>期間：</strong>每週日節目現場直播期間<br><strong>限制：</strong>最大可投 <span class="text-purple-600 font-bold">5 票</span><br><strong>消耗：</strong>1 票 = 50 紅寶石(Ruby) 或 5 鑽石(Diamond)。<span class="text-purple-700 font-bold">投滿 5 票共需 250 紅寶石</span> (期限90天)。</p>
+                <p class="text-xs text-slate-500 mb-3"><strong>期間：</strong>每週日節目直播期間<br><strong>限制：</strong>最大可投 <span class="text-purple-600 font-bold">5 票</span> (共需 250 紅寶石)</p>
                 
-                <h4 class="font-bold text-xs text-slate-800 mb-2">💎 Higher APP 代幣獲取流程：</h4>
+                <!-- 示意圖四、五 -->
+                <div class="grid grid-cols-2 gap-2 mb-4">
+                    <div>
+                        <p class="text-[10px] text-slate-400 mb-1">📷 Higher APP 使用流程：</p>
+                        <img src="11.png" alt="Higher 使用流程" class="w-full rounded-xl shadow-sm border border-slate-100">
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 mb-1">📷 紅寶石/鑽石說明：</p>
+                        <img src="22.png" alt="紅寶石鑽石說明" class="w-full rounded-xl shadow-sm border border-slate-100">
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-xs text-slate-800 mb-2">💎 Higher APP 操作提醒：</h4>
                 <div class="space-y-2 text-xs text-slate-600 pl-1 border-l-2 border-purple-200">
-                    <p><strong>1. 註冊登入：</strong> 下載並註冊 Higher APP 帳號。</p>
-                    <p><strong>2. 進入錢包：</strong> 首頁點擊右上角「鑽石 💎」圖示進入 Store 頁面。</p>
-                    <p><strong>3. 免費賺取 (Charge 頁面)：</strong> 可點擊 "Watch Video Ads" 看廣告，或透過 Check-in(簽到)、Lucky roulette(幸運轉盤)、Ladder Games(爬格子) 任務免費累積紅寶石。</p>
-                    <p><strong>4. 課金購買 (Buy 頁面)：</strong> 可在 "Buy" 頁面付費購買藍鑽石（1 個藍鑽石 = 10 個紅寶石）再轉換為投票代幣。</p>
+                    <p><strong>1. 下載註冊：</strong> 下載 Higher APP 並完成註冊/登入。</p>
+                    <p><strong>2. 進入首頁：</strong> 點擊右上角的「鑽石圖示」進入 Store 商店。</p>
+                    <p><strong>3. 進入 Charge 頁面：</strong> 可透過看影片廣告、簽到 (Check-in)、幸運轉盤 (Lucky roulette)、爬格子 (Ladder Games) 任務免費獲得紅寶石。</p>
+                    <p><strong>4. 購買鑽石：</strong> 在 Buy 頁面可用課金購買藍鑽石（1 藍鑽石 = 10 紅寶石）再換成紅寶石投票。</p>
                 </div>
             </div>
         </section>
 
     </main>
 
+    <!-- 頁籤切換邏輯 JavaScript -->
     <script>
         function switchTab(tabId) {
-            // 隱藏所有內容
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.add('hidden');
             });
-            // 移除所有按鈕的選中樣式
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-sm');
                 btn.classList.add('text-slate-600', 'hover:bg-slate-100');
             });
 
-            // 顯示當前選中的內容
             document.getElementById('content-' + tabId).classList.remove('hidden');
-            // 為當前按鈕加上選中樣式
             const activeBtn = document.getElementById('tab-' + tabId);
             activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-100');
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-sm');
