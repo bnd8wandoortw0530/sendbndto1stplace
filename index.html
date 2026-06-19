@@ -59,7 +59,7 @@
                 </div>
                 <p class="text-xs text-slate-500 mb-4"><strong>期間：</strong>每週六 00:00 ~ 每週二 23:59 (KST)<br><strong>限制：</strong>1 台裝置可投 <span class="text-pink-600 font-bold">5 票</span></p>
                 
-                <!-- Slide 左右滑動組件區 -->
+                <!-- 事前投票 Slide 左右滑動組件區 -->
                 <div class="relative group mb-3">
                     <!-- 滑動視窗 -->
                     <div id="mcd-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
@@ -123,9 +123,9 @@
                     <button onclick="moveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
 
-                <!-- 底部進度點點 (Dots Indicator) -->
+                <!-- 底部進度點點 -->
                 <div class="flex justify-center gap-1.5 mt-2" id="slider-dots">
-                    <span class="w-2 h-2 rounded-full bg-pink-500 transition-all duration-300" id="dot-0"></span>
+                    <span class="w-4 h-2 rounded-full bg-pink-500 transition-all duration-300" id="dot-0"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-1"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-2"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-3"></span>
@@ -141,21 +141,80 @@
                     </h3>
                     <span class="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">每週四直播時段</span>
                 </div>
-                <p class="text-xs text-slate-500 mb-3"><strong>限制：</strong>1 台裝置可投 <span class="text-purple-600 font-bold">5 回</span></p>
+                <p class="text-xs text-slate-500 mb-4"><strong>限制：</strong>1 台裝置可投 <span class="text-purple-600 font-bold">5 回</span></p>
                 
-                <div class="mb-4">
-                    <p class="text-[11px] text-slate-400 mb-1">📷 實時投票畫面參考：</p>
-                    <img src="messageImage_1781541724783.jpg" alt="MCD 實時投票" class="w-full rounded-xl shadow-sm border border-slate-100">
+                <!-- 實時投票 Live Slide 左右滑動組件區 -->
+                <div class="relative group mb-3">
+                    <!-- 滑動視窗 -->
+                    <div id="mcd-live-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                        
+                        <!-- Slide 1 -->
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex gap-1.5 items-center mb-2">
+                                <span class="bg-purple-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">1</span>
+                                <p class="text-slate-700 font-bold text-xs">直播時段點選 M COUNTDOWN 橫幅</p>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
+                                <div class="-mt-[10%]">
+                                    <img src="https://i.ibb.co/7xgRHcNm/S-126328878.jpg" class="w-full h-auto block" alt="Live Step 1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex gap-1.5 items-center mb-2">
+                                <span class="bg-purple-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">2</span>
+                                <p class="text-slate-700 font-bold text-xs">進入決賽候補畫面點擊 BOYNEXTDOOR</p>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
+                                <div class="-mt-[10%]">
+                                    <img src="https://i.ibb.co/93YV5nWX/S-126328883.jpg" class="w-full h-auto block" alt="Live Step 2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex gap-1.5 items-center mb-2">
+                                <span class="bg-purple-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">3</span>
+                                <p class="text-slate-700 font-bold text-xs">完成滑動驗證並送出實時投票</p>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
+                                <div class="-mt-[10%]">
+                                    <img src="https://i.ibb.co/m54Qzf4X/S-126328882.jpg" class="w-full h-auto block" alt="Live Step 3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex gap-1.5 items-center mb-2">
+                                <span class="bg-purple-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">4</span>
+                                <p class="text-slate-700 font-bold text-xs">出現投票成功畫面（共可投5回）</p>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
+                                <div class="-mt-[10%]">
+                                    <img src="https://i.ibb.co/jvTqZQMq/S-126328880.jpg" class="w-full h-auto block" alt="Live Step 4">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 左右輔助切換箭頭 -->
+                    <button onclick="moveLiveSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold hover:bg-black/60 z-10">❮</button>
+                    <button onclick="moveLiveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
 
-                <div class="space-y-3 text-xs">
-                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
-                        <span class="font-bold text-purple-600">步驟 1：</span>直播時段開啟 App，點選帶有 LIVE 紅色標籤的 <strong>M COUNTDOWN LIVE VOTE</strong> 橫幅。
-                    </div>
-                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
-                        <span class="font-bold text-purple-600">步驟 2：</span>進入決賽候補畫面，直接點擊支持的藝人頭像與歌曲完成即時投票。
-                    </div>
+                <!-- 底部進度點點 -->
+                <div class="flex justify-center gap-1.5 mt-2" id="live-slider-dots">
+                    <span class="w-4 h-2 rounded-full bg-purple-600 transition-all duration-300" id="live-dot-0"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="live-dot-1"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="live-dot-2"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="live-dot-3"></span>
                 </div>
+                <p class="text-center text-[10px] text-slate-400 mt-2">💡 左右滑動圖片可檢視下一步驟</p>
             </div>
         </section>
 
@@ -277,7 +336,7 @@
 
     <!-- 頁籤與輪播圖控制邏輯 JavaScript -->
     <script>
-        // 頁籤切換
+        // ======= 1. 節目頁籤切換邏輯 =======
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.add('hidden');
@@ -293,7 +352,7 @@
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-sm');
         }
 
-        // MCD 輪播圖邏輯
+        // ======= 2. MCD 事前投票輪播邏輯 =======
         const slider = document.getElementById('mcd-slider');
         const dots = [
             document.getElementById('dot-0'),
@@ -302,7 +361,6 @@
             document.getElementById('dot-3')
         ];
 
-        // 監聽滾動事件更新底部小點點
         slider.addEventListener('scroll', () => {
             const index = Math.round(slider.scrollLeft / slider.clientWidth);
             dots.forEach((dot, i) => {
@@ -316,10 +374,36 @@
             });
         });
 
-        // 箭頭點擊切換
         function moveSlider(direction) {
             const step = slider.clientWidth;
             slider.scrollLeft += (step * direction);
+        }
+
+        // ======= 3. MCD 實時投票輪播邏輯 =======
+        const liveSlider = document.getElementById('mcd-live-slider');
+        const liveDots = [
+            document.getElementById('live-dot-0'),
+            document.getElementById('live-dot-1'),
+            document.getElementById('live-dot-2'),
+            document.getElementById('live-dot-3')
+        ];
+
+        liveSlider.addEventListener('scroll', () => {
+            const index = Math.round(liveSlider.scrollLeft / liveSlider.clientWidth);
+            liveDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-slate-200');
+                    dot.classList.add('bg-purple-600', 'w-4');
+                } else {
+                    dot.classList.remove('bg-purple-600', 'w-4');
+                    dot.classList.add('bg-slate-200');
+                }
+            });
+        });
+
+        function moveLiveSlider(direction) {
+            const step = liveSlider.clientWidth;
+            liveSlider.scrollLeft += (step * direction);
         }
     </script>
 </body>
