@@ -244,7 +244,7 @@
         <!-- ==================== 三、MBC Show! Music Core ==================== -->
         <section id="content-mc" class="tab-content space-y-10 hidden">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-800">
-                <strong>📌 投票工具：</strong> Mubeat APP 與 Muniverse APP (兩者皆計分)
+                <strong>📌 投票工具：</strong> Mubeat APP 與 Muniverse APP
             </div>
 
             <!-- ==================== A. Mubeat APP 區塊 ==================== -->
@@ -259,7 +259,6 @@
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
                             <span class="w-2.5 h-5 bg-green-500 rounded-full"></span> Mubeat Heart Beats 獲取方式
                         </h3>
-                        <span class="text-xs bg-green-100 text-green-700 px-2.5 py-1 rounded-full font-medium">免費/付費</span>
                     </div>
                     <p class="text-sm text-slate-500 mb-4 leading-relaxed">可透過觀看影片廣告、參與活動、解任務或直接商店內購買獲取 Heart Beats。</p>
                     
@@ -268,7 +267,7 @@
                             <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                                 <div class="flex gap-2 items-center mb-2">
                                     <span class="bg-green-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-                                    <p class="text-slate-700 font-bold text-sm">於 Store 頁面選 Heart Beat 看廣告等取得</p>
+                                    <p class="text-slate-700 font-bold text-sm">於 Store 頁面選擇 Heart Beat 透過觀看廣告、任務等方式取得 Heart Beats</p>
                                 </div>
                                 <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
                                     <div class="-mt-[10%]"><img src="https://i.ibb.co/spTdyLSw/1.jpg" class="w-full h-auto block" alt="Mubeat Get 1"></div>
@@ -277,10 +276,10 @@
                             <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                                 <div class="flex gap-2 items-center mb-2">
                                     <span class="bg-green-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                                    <p class="text-slate-700 font-bold text-sm">每日觀看滿額可解鎖額外贈送點數</p>
+                                    <p class="text-slate-700 font-bold text-sm">或於 Store 頁面選擇 Live Voting，直接購買投票券</p>
                                 </div>
                                 <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/spTdyLSw/1.jpg" class="w-full h-auto block" alt="Mubeat Get 2"></div>
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/qMhB0hk9/6.jpg" class="w-full h-auto block" alt="Mubeat Get 2"></div>
                                 </div>
                             </div>
                         </div>
@@ -386,7 +385,6 @@
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
                             <span class="w-2.5 h-5 bg-green-500 rounded-full"></span> Muniverse Lumy 獲取方式
                         </h3>
-                        <span class="text-xs bg-green-100 text-green-700 px-2.5 py-1 rounded-full font-medium">免費/付費</span>
                     </div>
                     <p class="text-sm text-slate-500 mb-4 leading-relaxed">可分為收集看廣告拿到的 Ad Lumy，或直接課金購買 Gold Lumy。</p>
                     
@@ -595,6 +593,7 @@
             targetSlider.scrollLeft += ((targetSlider.getBoundingClientRect().width + 16) * direction);
         }
 
+        // 動態監聽點點切換狀態
         function setupMCDotsListener(sliderId, dotsPrefix, activeColorClass) {
             const targetSlider = document.getElementById(sliderId);
             if(!targetSlider) return;
