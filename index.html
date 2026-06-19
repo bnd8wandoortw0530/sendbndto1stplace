@@ -7,9 +7,13 @@
     <!-- 引入 Tailwind CSS 雲端庫 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 隱藏滾動條但保持滑動功能 */
+        /* 隱藏滾動條並保持滑動流暢度 */
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scroll-bar-width: none; }
+        .no-scrollbar { 
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+            -webkit-overflow-scrolling: touch; /* 優化 iOS 滑動體驗 */
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-16 text-base">
@@ -67,7 +71,7 @@
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-                                <p class="text-slate-7700 font-bold text-sm">點選時間倒數進入事前投票</p>
+                                <p class="text-slate-700 font-bold text-sm">點選時間倒數進入事前投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
                                 <div class="-mt-[10%]">
@@ -225,18 +229,18 @@
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">
-                        <span class="w-2.5 h-5 bg-blue-500 rounded-full"></span> 事前投票 (Pre-Vote)
+                        <span class="w-2.5 h-5 bg-pink-500 rounded-full"></span> 事前投票 (Pre-Vote)
                     </h3>
-                    <span class="text-xs bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full font-medium">每週日至每週三</span>
+                    <span class="text-xs bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full font-medium">每週日至每週三</span>
                 </div>
                 
-                <!-- 規則與補充說明 -->
-                <div class="space-y-2 text-sm leading-relaxed mb-4 text-slate-600">
-                    <p><strong>期間：</strong>每週日 ~ 每週三</p>
-                    <p><strong>消耗：</strong>1 票需消耗 <span class="text-blue-600 font-bold">50 愛心（💙或💛）</span></p>
-                    <p><strong>獲取：</strong>可使用 APP 內簽到、看廣告、任務等方式免費獲得愛心</p>
-                    <p class="text-blue-600 font-bold">投票數量無限制！</p>
-                </div>
+                <!-- 規則與補充說明 (與 MCD 格式完全統一) -->
+                <p class="text-sm text-slate-500 mb-4 leading-relaxed">
+                    <strong>期間：</strong>每週日 ~ 每週三<br>
+                    <strong>消耗：</strong>1 票需消耗 <span class="text-pink-600 font-bold">50 愛心（💙或💛）</span><br>
+                    <strong>獲取：</strong>可使用 APP 內簽到、看廣告、任務等方式免費獲得愛心<br>
+                    <strong>限制：</strong><span class="text-pink-600 font-bold">投票數量無限制！</span>
+                </p>
                 
                 <!-- Music Bank Slide 左右滑動組件區 -->
                 <div class="relative group mb-3">
@@ -245,7 +249,7 @@
                         <!-- Slide 1 -->
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-blue-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
                                 <p class="text-slate-700 font-bold text-sm">可於首頁直接解任獲得愛心</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
@@ -258,7 +262,7 @@
                         <!-- Slide 2 -->
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-blue-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
                                 <p class="text-slate-700 font-bold text-sm">在 STORE 的 Free 頁面解任務可獲免費愛心，亦可在 Hearts 購買</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
@@ -271,7 +275,7 @@
                         <!-- Slide 3 -->
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-blue-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span>
                                 <p class="text-slate-700 font-bold text-sm">點選下方 VOTE，選擇 MUSIC BANK 進入投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
@@ -284,7 +288,7 @@
                         <!-- Slide 4 -->
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-blue-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span>
                                 <p class="text-slate-700 font-bold text-sm">選擇 BOYNEXTDOOR 並填寫數量完成投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
@@ -299,9 +303,9 @@
                     <button onclick="moveMBSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
 
-                <!-- 底部進度點點 -->
+                <!-- 底部進度點點 (顏色同步修改) -->
                 <div class="flex justify-center gap-1.5 mt-3" id="mb-slider-dots">
-                    <span class="w-4 h-2 rounded-full bg-blue-500 transition-all duration-300" id="mb-dot-0"></span>
+                    <span class="w-4 h-2 rounded-full bg-pink-500 transition-all duration-300" id="mb-dot-0"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mb-dot-1"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mb-dot-2"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mb-dot-3"></span>
@@ -454,7 +458,7 @@
         });
 
         function moveSlider(direction) {
-            const step = slider.clientWidth;
+            const step = slider.getBoundingClientRect().width + 16; // 加上 gap 的 16px 滾動更精準
             slider.scrollLeft += (step * direction);
         }
 
@@ -481,7 +485,7 @@
         });
 
         function moveLiveSlider(direction) {
-            const step = liveSlider.clientWidth;
+            const step = liveSlider.getBoundingClientRect().width + 16; // 加上 gap 的 16px
             liveSlider.scrollLeft += (step * direction);
         }
 
@@ -499,16 +503,16 @@
             mbDots.forEach((dot, i) => {
                 if (i === index) {
                     dot.classList.remove('bg-slate-200');
-                    dot.classList.add('bg-blue-500', 'w-4');
+                    dot.classList.add('bg-pink-500', 'w-4'); // 改為粉紅色
                 } else {
-                    dot.classList.remove('bg-blue-500', 'w-4');
+                    dot.classList.remove('bg-pink-500', 'w-4'); // 改為粉紅色
                     dot.classList.add('bg-slate-200');
                 }
             });
         });
 
         function moveMBSlider(direction) {
-            const step = mbSlider.clientWidth;
+            const step = mbSlider.getBoundingClientRect().width + 16; // 加上 gap 的 16px
             mbSlider.scrollLeft += (step * direction);
         }
     </script>
