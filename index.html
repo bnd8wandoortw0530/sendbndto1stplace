@@ -6,6 +6,11 @@
     <title>K-Pop 投票通 (K-Pop Vote Hub)</title>
     <!-- 引入 Tailwind CSS 雲端庫 -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 隱藏滾動條但保持滑動功能 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scroll-bar-width: none; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-12">
 
@@ -54,63 +59,78 @@
                 </div>
                 <p class="text-xs text-slate-500 mb-4"><strong>期間：</strong>每週六 00:00 ~ 每週二 23:59 (KST)<br><strong>限制：</strong>1 台裝置可投 <span class="text-pink-600 font-bold">5 票</span></p>
                 
-                <!-- 四步驟 2x2 網格直覺排版 -->
-                <div class="grid grid-cols-2 gap-3 text-xs mb-2">
-                    
-                    <!-- STEP 1 -->
-                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex flex-col justify-between">
-                        <div class="flex gap-1.5 items-start mb-2">
-                            <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">1</span>
-                            <p class="text-slate-700 font-semibold leading-tight text-[11px]">點選時間倒數進入事前投票</p>
-                        </div>
-                        <!-- 自動裁剪時間與電量欄位的外殼 -->
-                        <div class="overflow-hidden rounded-lg border border-slate-200 bg-white">
-                            <div class="-mt-[6%]">
-                                <img src="https://i.ibb.co/XZMD6VdZ/S-125763592.jpg" class="w-full h-auto block" alt="Step 1">
+                <!-- Slide 左右滑動組件區 -->
+                <div class="relative group mb-3">
+                    <!-- 滑動視窗 -->
+                    <div id="mcd-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                        
+                        <!-- Slide 1 -->
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex gap-1.5 items-center mb-2">
+                                <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">1</span>
+                                <p class="text-slate-700 font-bold text-xs">點選時間倒數進入事前投票</p>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
+                                <div class="-mt-[10%]"> <!-- 已調整為切除頂部 10% -->
+                                    <img src="https://i.ibb.co/XZMD6VdZ/S-125763592.jpg" class="w-full h-auto block" alt="Step 1">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- STEP 2 -->
-                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex flex-col justify-between">
-                        <div class="flex gap-1.5 items-start mb-2">
-                            <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">2</span>
-                            <p class="text-slate-700 font-semibold leading-tight text-[11px]">於選單中尋找 BOYNEXTDOOR</p>
-                        </div>
-                        <div class="overflow-hidden rounded-lg border border-slate-200 bg-white">
-                            <div class="-mt-[6%]">
-                                <img src="https://i.ibb.co/XZsj8MCt/S-125763590.jpg" class="w-full h-auto block" alt="Step 2">
+                        <!-- Slide 2 -->
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex gap-1.5 items-center mb-2">
+                                <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">2</span>
+                                <p class="text-slate-700 font-bold text-xs">於選單中尋找 BOYNEXTDOOR</p>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
+                                <div class="-mt-[10%]">
+                                    <img src="https://i.ibb.co/XZsj8MCt/S-125763590.jpg" class="w-full h-auto block" alt="Step 2">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- STEP 3 -->
-                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex flex-col justify-between">
-                        <div class="flex gap-1.5 items-start mb-2">
-                            <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">3</span>
-                            <p class="text-slate-700 font-semibold leading-tight text-[11px]">選擇歌曲並點擊提交投票</p>
-                        </div>
-                        <div class="overflow-hidden rounded-lg border border-slate-200 bg-white">
-                            <div class="-mt-[6%]">
-                                <img src="https://i.ibb.co/MkvF2yH1/S-125763591.jpg" class="w-full h-auto block" alt="Step 3">
+                        <!-- Slide 3 -->
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex gap-1.5 items-center mb-2">
+                                <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">3</span>
+                                <p class="text-slate-700 font-bold text-xs">選擇歌曲並點擊提交投票</p>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
+                                <div class="-mt-[10%]">
+                                    <img src="https://i.ibb.co/MkvF2yH1/S-125763591.jpg" class="w-full h-auto block" alt="Step 3">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- STEP 4 -->
-                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex flex-col justify-between">
-                        <div class="flex gap-1.5 items-start mb-2">
-                            <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">4</span>
-                            <p class="text-slate-700 font-semibold leading-tight text-[11px]">出現完成畫面代表投票成功</p>
-                        </div>
-                        <div class="overflow-hidden rounded-lg border border-slate-200 bg-white">
-                            <div class="-mt-[6%]">
-                                <img src="https://i.ibb.co/B5VX9bV5/S-125763594.jpg" class="w-full h-auto block" alt="Step 4">
+                        <!-- Slide 4 -->
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex gap-1.5 items-center mb-2">
+                                <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">4</span>
+                                <p class="text-slate-700 font-bold text-xs">出現完成畫面代表投票成功</p>
+                            </div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
+                                <div class="-mt-[10%]">
+                                    <img src="https://i.ibb.co/B5VX9bV5/S-125763594.jpg" class="w-full h-auto block" alt="Step 4">
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
+                    <!-- 左右輔助切換箭頭（點擊可直接切換圖片） -->
+                    <button onclick="moveSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold hover:bg-black/60 z-10">❮</button>
+                    <button onclick="moveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
+
+                <!-- 底部進度點點 (Dots Indicator) -->
+                <div class="flex justify-center gap-1.5 mt-2" id="slider-dots">
+                    <span class="w-2 h-2 rounded-full bg-pink-500 transition-all duration-300" id="dot-0"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-1"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-2"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-3"></span>
+                </div>
+                <p class="text-center text-[10px] text-slate-400 mt-2">💡 左右滑動圖片可檢視下一步驟</p>
             </div>
 
             <!-- 實時投票 -->
@@ -186,7 +206,7 @@
                 </div>
 
                 <div class="space-y-3">
-                    <p class="text-slate-700"><strong>🟢 1. 事前投票 (Pre-Vote)：</strong>每週二 18:00 ~ 每週開四 11:00 (KST)，投票數無限制。</p>
+                    <p class="text-slate-700"><strong>🟢 1. 事前投票 (Pre-Vote)：</strong>每週二 18:00 ~ 每週四 11:00 (KST)，投票數無限制。</p>
                     <p class="text-slate-700 pl-4 text-slate-500">• Mubeat：1 票 = 3 HeartBeats (90天期限)</p>
                     <p class="text-slate-700 pl-4 text-slate-500">• Muniverse：1 票 = 5 AdLumy (60天期限)</p>
                     
@@ -217,9 +237,9 @@
                 </div>
 
                 <div class="space-y-3.5 text-xs">
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 1</span><p class="text-slate-700">開啟 LiNC APP，在首頁「SBS Inkigayo 事前投票」區塊點選 <strong>        투표하기</strong>。</p></div>
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 2</span><p class="text-slate-700">在候補名單中選擇 <strong>BOYNEXTDOOR (VIRAL)</strong>，並點選下方 <strong>        투표하기</strong>。</p></div>
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 3</span><p class="text-slate-700">選擇票數（1~10票），選擇使用「粉絲點數(P)」或「寶石(Gem)」後，點選 <strong>        투표하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 1</span><p class="text-slate-700">開啟 LiNC APP，在首頁「SBS Inkigayo 事前投票」區塊點選 <strong>        투表하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 2</span><p class="text-slate-700">在候補名單中選擇 <strong>BOYNEXTDOOR (VIRAL)</strong>，並點選下方 <strong>        투表하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 3</span><p class="text-slate-700">選擇票數（1~10票），選擇使用「粉絲點數(P)」或「寶石(Gem)」後，點選 <strong>        투表하기</strong>。</p></div>
                     <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 4</span><p class="text-slate-700">出現完成畫面代表投票成功！每個帳號每天投 10 票。</p></div>
                 </div>
                 <div class="mt-4 p-3 bg-amber-50 text-amber-800 border border-amber-100 rounded-xl text-[11px]">
@@ -255,8 +275,9 @@
 
     </main>
 
-    <!-- 頁籤切換邏輯 JavaScript -->
+    <!-- 頁籤與輪播圖控制邏輯 JavaScript -->
     <script>
+        // 頁籤切換
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.add('hidden');
@@ -270,6 +291,35 @@
             const activeBtn = document.getElementById('tab-' + tabId);
             activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-100');
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-sm');
+        }
+
+        // MCD 輪播圖邏輯
+        const slider = document.getElementById('mcd-slider');
+        const dots = [
+            document.getElementById('dot-0'),
+            document.getElementById('dot-1'),
+            document.getElementById('dot-2'),
+            document.getElementById('dot-3')
+        ];
+
+        // 監聽滾動事件更新底部小點點
+        slider.addEventListener('scroll', () => {
+            const index = Math.round(slider.scrollLeft / slider.clientWidth);
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-slate-200');
+                    dot.classList.add('bg-pink-500', 'w-4'); // 當前活動點拉長
+                } else {
+                    dot.classList.remove('bg-pink-500', 'w-4');
+                    dot.classList.add('bg-slate-200');
+                }
+            });
+        });
+
+        // 箭頭點擊切換
+        function moveSlider(direction) {
+            const step = slider.clientWidth;
+            slider.scrollLeft += (step * direction);
         }
     </script>
 </body>
