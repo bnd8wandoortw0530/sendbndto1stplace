@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>音樂節目投票指南</title>
+    <!-- 引入 Tailwind CSS 雲端庫 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* 隱藏滾動條並保持滑動流暢度 */
@@ -17,6 +18,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-16 text-base">
 
+    <!-- APP 頂部導覽列 -->
     <header class="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 text-white shadow-md sticky top-0 z-50">
         <div class="max-w-lg mx-auto px-5 py-5 flex flex-col items-center">
             <h1 class="text-2xl font-bold tracking-wider flex items-center gap-2">
@@ -26,8 +28,10 @@
         </div>
     </header>
 
+    <!-- 主容器 -->
     <main class="max-w-lg mx-auto px-5 mt-6">
         
+        <!-- 節目切換頁籤 (Tabs) -->
         <div class="grid grid-cols-4 gap-1.5 bg-white p-2 rounded-xl shadow-sm border border-slate-100 mb-6 text-sm">
             <button onclick="switchTab('mcd')" id="tab-mcd" class="tab-btn py-3 font-bold rounded-lg text-center transition-all bg-sky-500 text-white shadow-sm">
                 MCD
@@ -43,11 +47,13 @@
             </button>
         </div>
 
+        <!-- ==================== 一、Mnet M Countdown ==================== -->
         <section id="content-mcd" class="tab-content space-y-8">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-800">
                 <strong>📌 投票工具：</strong> Mnet Plus APP
             </div>
             
+            <!-- 事前投票 -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">
@@ -59,69 +65,55 @@
                 
                 <div class="relative group mb-3">
                     <div id="mcd-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
-                        
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
                                 <p class="text-slate-700 font-bold text-sm">點選時間倒數進入事前投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/XZMD6VdZ/S-125763592.jpg" class="w-full h-auto block" alt="Step 1">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/XZMD6VdZ/S-125763592.jpg" class="w-full h-auto block" alt="Step 1"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
                                 <p class="text-slate-700 font-bold text-sm">於選單中尋找 BOYNEXTDOOR 並提交投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/XZsj8MCt/S-125763590.jpg" class="w-full h-auto block" alt="Step 2">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/XZsj8MCt/S-125763590.jpg" class="w-full h-auto block" alt="Step 2"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span>
                                 <p class="text-slate-700 font-bold text-sm">出現完成畫面代表投票成功</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/MkvF2yH1/S-125763591.jpg" class="w-full h-auto block" alt="Step 3">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/MkvF2yH1/S-125763591.jpg" class="w-full h-auto block" alt="Step 3"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span>
                                 <p class="text-slate-700 font-bold text-sm">點選 BOYNEXTDOOR 再次投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/B5VX9bV5/S-125763594.jpg" class="w-full h-auto block" alt="Step 4">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/B5VX9bV5/S-125763594.jpg" class="w-full h-auto block" alt="Step 4"></div>
                             </div>
                         </div>
-
                     </div>
                     <button onclick="moveSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
                     <button onclick="moveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
-
                 <div class="flex justify-center gap-1.5 mt-3" id="slider-dots">
                     <span class="w-4 h-2 rounded-full bg-pink-500 transition-all duration-300" id="dot-0"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-1"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-2"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-3"></span>
                 </div>
-                <p class="text-center text-xs text-slate-400 mt-3">💡 左右滑動圖片可檢視下一步驟</p>
             </div>
 
+            <!-- 實時投票 -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">
@@ -133,78 +125,62 @@
                 
                 <div class="relative group mb-3">
                     <div id="mcd-live-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
-                        
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex flex-col gap-1 mb-2">
-                                <div class="flex gap-2 items-center">
-                                    <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-                                    <p class="text-slate-700 font-bold text-sm">直播時段點選下方白色橫幅</p>
-                                </div>
-                                <p class="text-xs text-purple-600 pl-7 font-medium">（直播結束前皆可投票）</p>
+                            <div class="flex gap-2 items-center mb-2">
+                                <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                <p class="text-slate-700 font-bold text-sm">直播時段點選下方白色橫幅</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/7xgRHcNm/S-126328878.jpg" class="w-full h-auto block" alt="Live Step 1">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/7xgRHcNm/S-126328878.jpg" class="w-full h-auto block" alt="Live Step 1"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
                                 <p class="text-slate-700 font-bold text-sm">進入一位候補畫面選擇 BOYNEXTDOOR 並提交投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/93YV5nWX/S-126328983.jpg" class="w-full h-auto block" alt="Live Step 2">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/93YV5nWX/S-126328983.jpg" class="w-full h-auto block" alt="Live Step 2"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span>
                                 <p class="text-slate-700 font-bold text-sm">出現此畫面代表投票成功</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/m54Qzf4X/S-126328882.jpg" class="w-full h-auto block" alt="Live Step 3">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/m54Qzf4X/S-126328882.jpg" class="w-full h-auto block" alt="Live Step 3"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span>
                                 <p class="text-slate-700 font-bold text-sm">繼續選擇 BOYNEXTDOOR 並投票，共可投 5 次</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/jvTqZQMq/S-126328880.jpg" class="w-full h-auto block" alt="Live Step 4">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/jvTqZQMq/S-126328880.jpg" class="w-full h-auto block" alt="Live Step 4"></div>
                             </div>
                         </div>
-
                     </div>
                     <button onclick="moveLiveSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
                     <button onclick="moveLiveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
-
                 <div class="flex justify-center gap-1.5 mt-3" id="live-slider-dots">
                     <span class="w-4 h-2 rounded-full bg-purple-600 transition-all duration-300" id="live-dot-0"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-1"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-2"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="dot-3"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="live-dot-1"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="live-dot-2"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="live-dot-3"></span>
                 </div>
-                <p class="text-center text-xs text-slate-400 mt-3">💡 左右滑動圖片可檢視下一步驟</p>
             </div>
         </section>
 
+        <!-- ==================== 二、KBS Music Bank ==================== -->
         <section id="content-mb" class="tab-content space-y-8 hidden">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-800">
                 <strong>📌 投票工具：</strong> FANCAST APP
             </div>
 
+            <!-- 事前投票 (Pre-Vote) -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">
@@ -212,288 +188,327 @@
                     </h3>
                     <span class="text-xs bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full font-medium">每週日至每週三</span>
                 </div>
-                
-                <p class="text-sm text-slate-500 mb-4 leading-relaxed">
-                    <strong>期間：</strong>每週日 ~ 每週三<br>
-                    <strong>消耗：</strong>1 票需消耗 <span class="text-pink-600 font-bold">50 愛心（💙或💛）</span><br>
-                    <strong>獲取：</strong>可使用 APP 內簽到、看廣告、任務等方式免費獲得愛心<br>
-                    <strong>限制：</strong><span class="text-pink-600 font-bold">投票數量無限制！</span>
-                </p>
+                <p class="text-sm text-slate-500 mb-4 leading-relaxed"><strong>期間：</strong>每週日 ~ 每週三<br><strong>消耗：</strong>1 票需消耗 <span class="text-pink-600 font-bold">50 愛心</span><br><strong>限制：</strong><span class="text-pink-600 font-bold">投票數量無限制！</span></p>
                 
                 <div class="relative group mb-3">
                     <div id="mb-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
-                        
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
                                 <p class="text-slate-700 font-bold text-sm">可於首頁直接解任獲得愛心</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/hRYMMNZR/S-126328948.jpg" class="w-full h-auto block" alt="MB Step 1">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/hRYMMNZR/S-126328948.jpg" class="w-full h-auto block" alt="MB Step 1"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                                <p class="text-slate-700 font-bold text-sm">在 STORE 的 Free 頁面解任務可獲免費愛心，亦可在 Hearts 購買</p>
+                                <p class="text-slate-700 font-bold text-sm">在 STORE 頁面解任務可獲免費愛心</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/qY976Hc9/S-126328952.jpg" class="w-full h-auto block" alt="MB Step 2">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/qY976Hc9/S-126328952.jpg" class="w-full h-auto block" alt="MB Step 2"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span>
                                 <p class="text-slate-700 font-bold text-sm">點選下方 VOTE，選擇 MUSIC BANK 進入投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/3mR8T8fM/S-126328949.jpg" class="w-full h-auto block" alt="MB Step 3">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/3mR8T8fM/S-126328949.jpg" class="w-full h-auto block" alt="MB Step 3"></div>
                             </div>
                         </div>
-
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
                             <div class="flex gap-2 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span>
                                 <p class="text-slate-700 font-bold text-sm">選擇 BOYNEXTDOOR 並填寫數量完成投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/B2tKPtRK/S-126328950.jpg" class="w-full h-auto block" alt="MB Step 4">
-                                </div>
+                                <div class="-mt-[10%]"><img src="https://i.ibb.co/B2tKPtRK/S-126328950.jpg" class="w-full h-auto block" alt="MB Step 4"></div>
                             </div>
                         </div>
-
                     </div>
                     <button onclick="moveMBSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
                     <button onclick="moveMBSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
-
                 <div class="flex justify-center gap-1.5 mt-3" id="mb-slider-dots">
                     <span class="w-4 h-2 rounded-full bg-pink-500 transition-all duration-300" id="mb-dot-0"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mb-dot-1"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mb-dot-2"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mb-dot-3"></span>
                 </div>
-                <p class="text-center text-xs text-slate-400 mt-3">💡 左右滑動圖片可檢視下一步驟</p>
             </div>
         </section>
 
-        <section id="content-mc" class="tab-content space-y-8 hidden">
+        <!-- ==================== 三、MBC Show! Music Core ==================== -->
+        <section id="content-mc" class="tab-content space-y-10 hidden">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-800">
-                <strong>📌 投票工具：</strong> Mubeat APP / Muniverse APP
+                <strong>📌 投票工具：</strong> Mubeat APP 與 Muniverse APP (兩者皆計分)
             </div>
 
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                    <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">
-                        <span class="w-2.5 h-5 bg-pink-500 rounded-full"></span> 事前投票 (Pre-Vote)
-                    </h3>
-                    <span class="text-xs bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full font-medium">每週二至週四</span>
-                </div>
-                
-                <p class="text-sm text-slate-500 mb-4 leading-relaxed">
-                    <strong>期間：</strong>每週二 ~ 每週四<br>
-                    <strong>Mubeat 消耗：</strong>1 票 = <span class="text-pink-600 font-bold">3 Heart Beats</span><br>
-                    <strong>Muniverse 消耗：</strong>1 票 = <span class="text-pink-600 font-bold">5 Ad Lumy</span>
-                </p>
+            <!-- ==================== A. Mubeat APP 區塊 ==================== -->
+            <div class="space-y-6">
+                <h2 class="text-xl font-extrabold text-slate-900 tracking-wide border-b-2 border-slate-200 pb-2 flex items-center gap-2">
+                    <span>📱</span> Mubeat APP 指南
+                </h2>
 
-                <div class="relative group mb-3">
-                    <div id="mc-pre-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
-                        
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-                                <p class="text-slate-700 font-bold text-sm">【Mubeat 獲取】於 Store 頁面選 Heart Beat 看廣告等取得</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/spTdyLSw/1.jpg" class="w-full h-auto block" alt="Mubeat Get">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                                <p class="text-slate-700 font-bold text-sm">【Muniverse 獲取】於 Store 頁面選「Lumy充值站」看廣告蒐集</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/LzCh8z2s/2.jpg" class="w-full h-auto block" alt="Muniverse Ad Get">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span>
-                                <p class="text-slate-700 font-bold text-sm">【Muniverse 購入】於 Store 選 Gold Lumy 直接購入</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/tTqS61yR/3.jpg" class="w-full h-auto block" alt="Muniverse Gold Buy">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span>
-                                <p class="text-slate-700 font-bold text-sm">【Mubeat 投票】在投票頁選 Show! Music Core Global Pre-Voting</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="Mubeat Pre 1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">5</span>
-                                <p class="text-slate-700 font-bold text-sm">【Mubeat 投票】選擇歌手與歌曲，輸入票數完成投票</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="Mubeat Pre 2">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">6</span>
-                                <p class="text-slate-700 font-bold text-sm">【Muniverse 投票】於 Vote 頁選 Music Core 並點 GLOBAL PRE-VOTING</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/C5c6gW4T/S-126337037.jpg" class="w-full h-auto block" alt="Muniverse Pre 1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">7</span>
-                                <p class="text-slate-700 font-bold text-sm">【Muniverse 投票】選擇歌手歌曲與票數，完成投票</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/ccxSzNTr/5.jpg" class="w-full h-auto block" alt="Muniverse Pre 2">
-                                </div>
-                            </div>
-                        </div>
-
+                <!-- 1. Mubeat Heart Beats 獲取方式 (綠色) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                            <span class="w-2.5 h-5 bg-green-500 rounded-full"></span> Mubeat Heart Beats 獲取方式
+                        </h3>
+                        <span class="text-xs bg-green-100 text-green-700 px-2.5 py-1 rounded-full font-medium">免費/付費</span>
                     </div>
-                    <button onclick="moveMCRotateSlider('mc-pre-slider', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
-                    <button onclick="moveMCRotateSlider('mc-pre-slider', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">可透過觀看影片廣告、參與活動、解任務或直接商店內購買獲取 Heart Beats。</p>
+                    
+                    <div class="relative group mb-3">
+                        <div id="mc-mubeat-get-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-green-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                    <p class="text-slate-700 font-bold text-sm">於 Store 頁面選 Heart Beat 看廣告等取得</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/spTdyLSw/1.jpg" class="w-full h-auto block" alt="Mubeat Get 1"></div>
+                                </div>
+                            </div>
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-green-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                    <p class="text-slate-700 font-bold text-sm">每日觀看滿額可解鎖額外贈送點數</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/spTdyLSw/1.jpg" class="w-full h-auto block" alt="Mubeat Get 2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="moveMCRotateSlider('mc-mubeat-get-slider', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                        <button onclick="moveMCRotateSlider('mc-mubeat-get-slider', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                    </div>
+                    <div class="flex justify-center gap-1.5 mt-3" id="mc-mb-get-dots">
+                        <span class="w-4 h-2 rounded-full bg-green-500 transition-all duration-300" id="mc-mb-get-dot-0"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-mb-get-dot-1"></span>
+                    </div>
                 </div>
 
-                <div class="flex justify-center gap-1.5 mt-3" id="mc-pre-dots">
-                    <span class="w-4 h-2 rounded-full bg-pink-500 transition-all duration-300" id="mc-pre-dot-0"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-pre-dot-1"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-pre-dot-2"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-pre-dot-3"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-pre-dot-4"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-pre-dot-5"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-pre-dot-6"></span>
+                <!-- 2. Mubeat 事前投票 (粉色) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                            <span class="w-2.5 h-5 bg-pink-500 rounded-full"></span> Mubeat 事前投票 (Pre-Vote)
+                        </h3>
+                        <span class="text-xs bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full font-medium">每週二至週四</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">消耗：1 票 = <span class="text-pink-600 font-bold">3 Heart Beats</span>（無投票限制）</p>
+                    
+                    <div class="relative group mb-3">
+                        <div id="mc-mubeat-pre-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                    <p class="text-slate-700 font-bold text-sm">在投票頁選 Show! Music Core Global Pre-Voting</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="Mubeat Pre 1"></div>
+                                </div>
+                            </div>
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                    <p class="text-slate-700 font-bold text-sm">選擇歌手與歌曲，輸入票數完成投票</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="Mubeat Pre 2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="moveMCRotateSlider('mc-mubeat-pre-slider', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                        <button onclick="moveMCRotateSlider('mc-mubeat-pre-slider', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                    </div>
+                    <div class="flex justify-center gap-1.5 mt-3" id="mc-mb-pre-dots">
+                        <span class="w-4 h-2 rounded-full bg-pink-500 transition-all duration-300" id="mc-mb-pre-dot-0"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-mb-pre-dot-1"></span>
+                    </div>
                 </div>
-                <p class="text-center text-xs text-slate-400 mt-3">💡 左右滑動圖片可檢視下一步驟</p>
+
+                <!-- 3. Mubeat 實時投票 (紫色) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                            <span class="w-2.5 h-5 bg-purple-600 rounded-full"></span> Mubeat 實時投票 (Live Vote)
+                        </h3>
+                        <span class="text-xs bg-purple-100 text-purple-700 px-2.5 py-1 rounded-full font-medium">直播時段開票</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">消耗：1 票 = <span class="text-purple-600 font-bold">30 Heart Beats</span>（每個帳號上限投 <span class="text-purple-600 font-bold">5 票</span>）</p>
+                    
+                    <div class="relative group mb-3">
+                        <div id="mc-mubeat-live-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                    <p class="text-slate-700 font-bold text-sm">於 Vote 頁面選擇 [Ep. XXX] Live Voting</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="Mubeat Live 1"></div>
+                                </div>
+                            </div>
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                    <p class="text-slate-700 font-bold text-sm">將 Heart Beats 兌換成實時投票券並完成投票</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="Mubeat Live 2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="moveMCRotateSlider('mc-mubeat-live-slider', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                        <button onclick="moveMCRotateSlider('mc-mubeat-live-slider', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                    </div>
+                    <div class="flex justify-center gap-1.5 mt-3" id="mc-mb-live-dots">
+                        <span class="w-4 h-2 rounded-full bg-purple-600 transition-all duration-300" id="mc-mb-live-dot-0"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-mb-live-dot-1"></span>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                    <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">
-                        <span class="w-2.5 h-5 bg-purple-600 rounded-full"></span> 實時一位投票 (Live Vote)
-                    </h3>
-                    <span class="text-xs bg-purple-100 text-purple-700 px-2.5 py-1 rounded-full font-medium">直播生放送期間</span>
-                </div>
-                
-                <p class="text-sm text-slate-500 mb-4 leading-relaxed">
-                    <strong>期間：</strong>生放送直播期間<br>
-                    <strong>Mubeat 限制：</strong>1 票 = <span class="text-purple-600 font-bold">30 Heart Beats</span>（限投 <span class="text-purple-600 font-bold">5 票</span>）<br>
-                    <strong>Muniverse 限制：</strong>1 票 = <span class="text-purple-600 font-bold">50 Ad Lumy</span>（限投 <span class="text-purple-600 font-bold">5 票</span>）
-                </p>
+            <!-- ==================== B. Muniverse APP 區塊 ==================== -->
+            <div class="space-y-6 pt-4">
+                <h2 class="text-xl font-extrabold text-slate-900 tracking-wide border-b-2 border-slate-200 pb-2 flex items-center gap-2">
+                    <span>📱</span> Muniverse APP 指南
+                </h2>
 
-                <div class="relative group mb-3">
-                    <div id="mc-live-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
-                        
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-                                <p class="text-slate-700 font-bold text-sm">【Mubeat】於 Vote 頁面選擇 [Ep. XXX] Live Voting</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="Mubeat Live 1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                                <p class="text-slate-700 font-bold text-sm">【Mubeat】將 Heart Beats 兌換成實時投票券並完成投票</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="Mubeat Live 2">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span>
-                                <p class="text-slate-700 font-bold text-sm">【Muniverse】在 Vote 頁選 Music Core 點 APP LIVE VOTING</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/C5c6gW4T/S-126337037.jpg" class="w-full h-auto block" alt="Muniverse Live 1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <div class="flex gap-2 items-center mb-2">
-                                <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span>
-                                <p class="text-slate-700 font-bold text-sm">【Muniverse】選擇支持的歌手歌曲與票數，完成投票</p>
-                            </div>
-                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
-                                <div class="-mt-[10%]">
-                                    <img src="https://i.ibb.co/C5c6gW4T/S-126337037.jpg" class="w-full h-auto block" alt="Muniverse Live 2">
-                                </div>
-                            </div>
-                        </div>
-
+                <!-- 4. Muniverse Lumy 獲取方式 (綠色) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                            <span class="w-2.5 h-5 bg-green-500 rounded-full"></span> Muniverse Lumy 獲取方式
+                        </h3>
+                        <span class="text-xs bg-green-100 text-green-700 px-2.5 py-1 rounded-full font-medium">免費/付費</span>
                     </div>
-                    <button onclick="moveMCRotateSlider('mc-live-slider', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
-                    <button onclick="moveMCRotateSlider('mc-live-slider', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">可分為收集看廣告拿到的 Ad Lumy，或直接課金購買 Gold Lumy。</p>
+                    
+                    <div class="relative group mb-3">
+                        <div id="mc-muniverse-get-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-green-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                    <p class="text-slate-700 font-bold text-sm">於 Store 頁面選「Lumy充值站」看廣告蒐集</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/LzCh8z2s/2.jpg" class="w-full h-auto block" alt="Muniverse Get 1"></div>
+                                </div>
+                            </div>
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-green-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                    <p class="text-slate-700 font-bold text-sm">於 Store 選 Gold Lumy 直接購入</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/tTqS61yR/3.jpg" class="w-full h-auto block" alt="Muniverse Get 2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="moveMCRotateSlider('mc-muniverse-get-slider', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                        <button onclick="moveMCRotateSlider('mc-muniverse-get-slider', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                    </div>
+                    <div class="flex justify-center gap-1.5 mt-3" id="mc-mu-get-dots">
+                        <span class="w-4 h-2 rounded-full bg-green-500 transition-all duration-300" id="mc-mu-get-dot-0"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-mu-get-dot-1"></span>
+                    </div>
                 </div>
 
-                <div class="flex justify-center gap-1.5 mt-3" id="mc-live-dots">
-                    <span class="w-4 h-2 rounded-full bg-purple-600 transition-all duration-300" id="mc-live-dot-0"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-live-dot-1"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-live-dot-2"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-live-dot-3"></span>
+                <!-- 5. Muniverse 事前投票 (粉色) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                            <span class="w-2.5 h-5 bg-pink-500 rounded-full"></span> Muniverse 事前投票 (Pre-Vote)
+                        </h3>
+                        <span class="text-xs bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full font-medium">每週二至週四</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">消耗：1 票 = <span class="text-pink-600 font-bold">5 Ad Lumy</span></p>
+                    
+                    <div class="relative group mb-3">
+                        <div id="mc-muniverse-pre-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                    <p class="text-slate-700 font-bold text-sm">於 Vote 頁選 Music Core 並點 GLOBAL PRE-VOTING</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/C5c6gW4T/S-126337037.jpg" class="w-full h-auto block" alt="Muniverse Pre 1"></div>
+                                </div>
+                            </div>
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-pink-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                    <p class="text-slate-700 font-bold text-sm">選擇歌手歌曲與票數，完成投票</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/ccxSzNTr/5.jpg" class="w-full h-auto block" alt="Muniverse Pre 2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="moveMCRotateSlider('mc-muniverse-pre-slider', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                        <button onclick="moveMCRotateSlider('mc-muniverse-pre-slider', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                    </div>
+                    <div class="flex justify-center gap-1.5 mt-3" id="mc-mu-pre-dots">
+                        <span class="w-4 h-2 rounded-full bg-pink-500 transition-all duration-300" id="mc-mu-pre-dot-0"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-mu-pre-dot-1"></span>
+                    </div>
                 </div>
-                <p class="text-center text-xs text-slate-400 mt-3">💡 左右滑動圖片可檢視下一步驟</p>
+
+                <!-- 6. Muniverse 實時投票 (紫色) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                            <span class="w-2.5 h-5 bg-purple-600 rounded-full"></span> Muniverse 實時投票 (Live Vote)
+                        </h3>
+                        <span class="text-xs bg-purple-100 text-purple-700 px-2.5 py-1 rounded-full font-medium">直播生放送期間</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">消耗：1 票 = <span class="text-purple-600 font-bold">50 Ad Lumy</span>（每個帳號上限投 <span class="text-purple-600 font-bold">5 票</span>）</p>
+                    
+                    <div class="relative group mb-3">
+                        <div id="mc-muniverse-live-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                    <p class="text-slate-700 font-bold text-sm">在 Vote 頁選 Music Core 點 APP LIVE VOTING</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/C5c6gW4T/S-126337037.jpg" class="w-full h-auto block" alt="Muniverse Live 1"></div>
+                                </div>
+                            </div>
+                            <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <div class="flex gap-2 items-center mb-2">
+                                    <span class="bg-purple-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                    <p class="text-slate-700 font-bold text-sm">選擇支持的歌手歌曲與票數，完成投票</p>
+                                </div>
+                                <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
+                                    <div class="-mt-[10%]"><img src="https://i.ibb.co/C5c6gW4T/S-126337037.jpg" class="w-full h-auto block" alt="Muniverse Live 2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="moveMCRotateSlider('mc-muniverse-live-slider', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                        <button onclick="moveMCRotateSlider('mc-muniverse-live-slider', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                    </div>
+                    <div class="flex justify-center gap-1.5 mt-3" id="mc-mu-live-dots">
+                        <span class="w-4 h-2 rounded-full bg-purple-600 transition-all duration-300" id="mc-mu-live-dot-0"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-mu-live-dot-1"></span>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- ==================== 四、SBS Inkigayo ==================== -->
         <section id="content-inki" class="tab-content space-y-8 hidden">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-800">
-                <strong>📌 直播時間：</strong>每週日 15:20 | <strong>權重：</strong>事前 5% + 實時 5%
+                <strong>📌 直播時間：</strong>每週日 15:20
             </div>
 
+            <!-- 事前投票 -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-lg text-rose-600 flex items-center gap-2">
@@ -501,61 +516,33 @@
                     </h3>
                     <span class="text-xs bg-rose-100 text-rose-700 px-2.5 py-1 rounded-full font-medium">每日重置</span>
                 </div>
-                <p class="text-sm text-slate-500 mb-4 leading-relaxed"><strong>期間：</strong>每週二 18:00 ~ 每週五 23:59 (KST)<br><strong>限制：</strong>每日上限 <span class="text-rose-600 font-bold">10 票</span><br><strong>消耗：</strong>1 票 = 15 粉絲點數(P) 或 5 寶石(Gem)</p>
-                
+                <p class="text-sm text-slate-500 mb-4 leading-relaxed"><strong>期間：</strong>每週二 18:00 ~ 每週五 23:59 (KST)<br><strong>限制：</strong>每日上限 10 票</p>
                 <div class="mb-4">
-                    <p class="text-xs text-slate-400 mb-1.5">📷 LiNC APP 事前投票流程：</p>
                     <img src="S__126132227.jpg" alt="Inkigayo 事前投票" class="w-full rounded-xl shadow-sm border border-slate-100">
-                </div>
-
-                <div class="space-y-4 text-sm leading-relaxed">
-                    <div class="flex gap-3"><span class="font-bold text-rose-500 shrink-0">STEP 1</span><p class="text-slate-700">開啟 LiNC APP，在首頁「SBS Inkigayo 事前投票」區塊點選 <strong>투표하기</strong>。</p></div>
-                    <div class="flex gap-3"><span class="font-bold text-rose-500 shrink-0">STEP 2</span><p class="text-slate-700">在候補名單中選擇 <strong>BOYNEXTDOOR (VIRAL)</strong>，並點選下方 <strong>투표하기</strong>。</p></div>
-                    <div class="flex gap-3"><span class="font-bold text-rose-500 shrink-0">STEP 3</span><p class="text-slate-700">選擇票數（1~10票），選擇使用「粉絲點數(P)」或「寶石(Gem)」後，點選 <strong>투표하기</strong>。</p></div>
-                    <div class="flex gap-3"><span class="font-bold text-rose-500 shrink-0">STEP 4</span><p class="text-slate-700">出現完成畫面代表投票成功！每個帳號每天投 10 票。</p></div>
-                </div>
-                <div class="mt-4 p-4 bg-amber-50 text-amber-800 border border-amber-100 rounded-xl text-xs leading-relaxed">
-                    💡 <strong>免費獲取：</strong> 粉絲點數 (P) 可透過觀看廣告、每日簽到等方式免費獲得；寶石 (Gem) 則需付費購買。
                 </div>
             </div>
 
+            <!-- 實時投票 -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-lg text-purple-700 flex items-center gap-2">
                         <span class="w-2.5 h-5 bg-purple-600 rounded-full"></span> 實時一位投票 — Higher APP
                     </h3>
                 </div>
-                <p class="text-sm text-slate-500 mb-4 leading-relaxed"><strong>期間：</strong>每週日節目直播期間<br><strong>限制：</strong>最大可投 <span class="text-purple-600 font-bold">5 票</span> (共需 250 紅寶石)</p>
-                
                 <div class="grid grid-cols-2 gap-3 mb-4">
-                    <div>
-                        <p class="text-xs text-slate-400 mb-1">📷 Higher APP 使用流程：</p>
-                        <img src="11.png" alt="Higher 使用流程" class="w-full rounded-xl shadow-sm border border-slate-100">
-                    </div>
-                    <div>
-                        <p class="text-xs text-slate-400 mb-1">📷 紅寶石/鑽石說明：</p>
-                        <img src="22.png" alt="紅寶石鑽石說明" class="w-full rounded-xl shadow-sm border border-slate-100">
-                    </div>
-                </div>
-
-                <h4 class="font-bold text-sm text-slate-800 mb-2">💎 Higher APP 操作提醒：</h4>
-                <div class="space-y-3 text-sm text-slate-600 pl-2 border-l-2 border-purple-200 leading-relaxed">
-                    <p><strong>1. 下載註冊：</strong> 下載 Higher APP 並完成註冊/登入。</p>
-                    <p><strong>2. 進入首頁：</strong> 點擊右上角的「鑽石圖示」進入 Store 商店。</p>
-                    <p><strong>3. 進入 Charge 頁面：</strong> 可透過看影片廣告、簽到 (Check-in)、幸運轉盤 (Lucky roulette)、爬格子 (Ladder Games) 任務免費獲得紅寶石。</p>
-                    <p><strong>4. 購買鑽石：</strong> 在 Buy 頁面可用課金購買藍鑽石（1 藍鑽石 = 10 紅寶石）再換成紅寶石投票。</p>
+                    <img src="11.png" alt="Higher 使用流程" class="w-full rounded-xl shadow-sm border border-slate-100">
+                    <img src="22.png" alt="紅寶石鑽石說明" class="w-full rounded-xl shadow-sm border border-slate-100">
                 </div>
             </div>
         </section>
 
     </main>
 
+    <!-- 頁籤與輪播圖控制邏輯 JavaScript -->
     <script>
         // ======= 1. 節目頁籤切換邏輯 =======
         function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.add('hidden');
-            });
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('bg-sky-500', 'text-white', 'shadow-sm');
                 btn.classList.add('text-slate-600', 'hover:bg-slate-100');
@@ -567,92 +554,45 @@
             activeBtn.classList.add('bg-sky-500', 'text-white', 'shadow-sm');
         }
 
-        // ======= 2. MCD 事前投票輪播邏輯 =======
+        // ======= 2. MCD 輪播監聽 =======
         const slider = document.getElementById('mcd-slider');
-        const dots = [
-            document.getElementById('dot-0'),
-            document.getElementById('dot-1'),
-            document.getElementById('dot-2'),
-            document.getElementById('dot-3')
-        ];
-
+        const dots = [document.getElementById('dot-0'), document.getElementById('dot-1'), document.getElementById('dot-2'), document.getElementById('dot-3')];
         slider.addEventListener('scroll', () => {
             const index = Math.round(slider.scrollLeft / slider.clientWidth);
             dots.forEach((dot, i) => {
-                if (i === index) {
-                    dot.classList.remove('bg-slate-200');
-                    dot.classList.add('bg-pink-500', 'w-4');
-                } else {
-                    dot.classList.remove('bg-pink-500', 'w-4');
-                    dot.classList.add('bg-slate-200');
-                }
+                if (i === index) { dot.classList.remove('bg-slate-200'); dot.classList.add('bg-pink-500', 'w-4'); } 
+                else { dot.classList.remove('bg-pink-500', 'w-4'); dot.classList.add('bg-slate-200'); }
             });
         });
+        function moveSlider(direction) { slider.scrollLeft += ((slider.getBoundingClientRect().width + 16) * direction); }
 
-        function moveSlider(direction) {
-            const step = slider.getBoundingClientRect().width + 16; 
-            slider.scrollLeft += (step * direction);
-        }
-
-        // ======= 3. MCD 實時投票輪播邏輯 =======
         const liveSlider = document.getElementById('mcd-live-slider');
-        const liveDots = [
-            document.getElementById('live-dot-0'),
-            document.getElementById('live-dot-1'),
-            document.getElementById('live-dot-2'),
-            document.getElementById('live-dot-3')
-        ];
-
+        const liveDots = [document.getElementById('live-dot-0'), document.getElementById('live-dot-1'), document.getElementById('live-dot-2'), document.getElementById('live-dot-3')];
         liveSlider.addEventListener('scroll', () => {
             const index = Math.round(liveSlider.scrollLeft / liveSlider.clientWidth);
             liveDots.forEach((dot, i) => {
-                if (i === index) {
-                    dot.classList.remove('bg-slate-200');
-                    dot.classList.add('bg-purple-600', 'w-4');
-                } else {
-                    dot.classList.remove('bg-purple-600', 'w-4');
-                    dot.classList.add('bg-slate-200');
-                }
+                if (i === index) { dot.classList.remove('bg-slate-200'); dot.classList.add('bg-purple-600', 'w-4'); } 
+                else { dot.classList.remove('bg-purple-600', 'w-4'); dot.classList.add('bg-slate-200'); }
             });
         });
+        function moveLiveSlider(direction) { liveSlider.scrollLeft += ((liveSlider.getBoundingClientRect().width + 16) * direction); }
 
-        function moveLiveSlider(direction) {
-            const step = liveSlider.getBoundingClientRect().width + 16; 
-            liveSlider.scrollLeft += (step * direction);
-        }
-
-        // ======= 4. Music Bank 事前投票輪播邏輯 =======
+        // ======= 3. Music Bank 輪播監聽 =======
         const mbSlider = document.getElementById('mb-slider');
-        const mbDots = [
-            document.getElementById('mb-dot-0'),
-            document.getElementById('mb-dot-1'),
-            document.getElementById('mb-dot-2'),
-            document.getElementById('mb-dot-3')
-        ];
-
+        const mbDots = [document.getElementById('mb-dot-0'), document.getElementById('mb-dot-1'), document.getElementById('mb-dot-2'), document.getElementById('mb-dot-3')];
         mbSlider.addEventListener('scroll', () => {
             const index = Math.round(mbSlider.scrollLeft / mbSlider.clientWidth);
             mbDots.forEach((dot, i) => {
-                if (i === index) {
-                    dot.classList.remove('bg-slate-200');
-                    dot.classList.add('bg-pink-500', 'w-4'); 
-                } else {
-                    dot.classList.remove('bg-pink-500', 'w-4'); 
-                    dot.classList.add('bg-slate-200');
-                }
+                if (i === index) { dot.classList.remove('bg-slate-200'); dot.classList.add('bg-pink-500', 'w-4'); } 
+                else { dot.classList.remove('bg-pink-500', 'w-4'); dot.classList.add('bg-slate-200'); }
             });
         });
+        function moveMBSlider(direction) { mbSlider.scrollLeft += ((mbSlider.getBoundingClientRect().width + 16) * direction); }
 
-        function moveMBSlider(direction) {
-            const step = mbSlider.getBoundingClientRect().width + 16; 
-            mbSlider.scrollLeft += (step * direction);
-        }
-
-        // ======= 5. Music Core 輪播通用控制與監聽 =======
+        // ======= 4. Music Core 通用輪播控制與動態監聽 =======
         function moveMCRotateSlider(sliderId, direction) {
             const targetSlider = document.getElementById(sliderId);
-            const step = targetSlider.getBoundingClientRect().width + 16;
-            targetSlider.scrollLeft += (step * direction);
+            targetSlider.scrollLeft += ((targetSlider.getBoundingClientRect().width + 16) * direction);
         }
 
         function setupMCDotsListener(sliderId, dotsPrefix, activeColorClass) {
@@ -662,8 +602,8 @@
             targetSlider.addEventListener('scroll', () => {
                 const index = Math.round(targetSlider.scrollLeft / targetSlider.clientWidth);
                 let i = 0;
-                while (document.getElementById(`${dotsPrefix}-${i}`)) {
-                    const dot = document.getElementById(`${dotsPrefix}-${i}`);
+                while (document.getElementById(`${dotsPrefix}-dot-${i}`)) {
+                    const dot = document.getElementById(`${dotsPrefix}-dot-${i}`);
                     if (i === index) {
                         dot.classList.remove('bg-slate-200');
                         dot.classList.add(activeColorClass, 'w-4');
@@ -676,9 +616,14 @@
             });
         }
 
-        // 綁定 Music Core 事前(粉紅)與實時(紫色)的滾動監聽
-        setupMCDotsListener('mc-pre-slider', 'mc-pre', 'bg-pink-500');
-        setupMCDotsListener('mc-live-slider', 'mc-live', 'bg-purple-600');
+        // 綁定 Music Core 6 組輪播圖的點點狀態切換
+        setupMCDotsListener('mc-mubeat-get-slider', 'mc-mb-get', 'bg-green-500');
+        setupMCDotsListener('mc-mubeat-pre-slider', 'mc-mb-pre', 'bg-pink-500');
+        setupMCDotsListener('mc-mubeat-live-slider', 'mc-mb-live', 'bg-purple-600');
+        
+        setupMCDotsListener('mc-muniverse-get-slider', 'mc-mu-get', 'bg-green-500');
+        setupMCDotsListener('mc-muniverse-pre-slider', 'mc-mu-pre', 'bg-pink-500');
+        setupMCDotsListener('mc-muniverse-live-slider', 'mc-mu-live', 'bg-purple-600');
     </script>
 </body>
 </html>
