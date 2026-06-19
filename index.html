@@ -71,7 +71,7 @@
                                 <p class="text-slate-700 font-bold text-xs">點選時間倒數進入事前投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
-                                <div class="-mt-[10%]"> <!-- 已調整為切除頂部 10% -->
+                                <div class="-mt-[10%]">
                                     <img src="https://i.ibb.co/XZMD6VdZ/S-125763592.jpg" class="w-full h-auto block" alt="Step 1">
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <div class="flex gap-1.5 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">2</span>
-                                <p class="text-slate-700 font-bold text-xs">於選單中尋找 BOYNEXTDOOR</p>
+                                <p class="text-slate-700 font-bold text-xs">於選單中尋找 BOYNEXTDOOR 並提交投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
                                 <div class="-mt-[10%]">
@@ -94,7 +94,7 @@
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <div class="flex gap-1.5 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">3</span>
-                                <p class="text-slate-700 font-bold text-xs">選擇歌曲並點擊提交投票</p>
+                                <p class="text-slate-700 font-bold text-xs">出現完成畫面代表投票成功</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
                                 <div class="-mt-[10%]">
@@ -107,7 +107,7 @@
                         <div class="w-full shrink-0 snap-center bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <div class="flex gap-1.5 items-center mb-2">
                                 <span class="bg-pink-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold">4</span>
-                                <p class="text-slate-700 font-bold text-xs">出現完成畫面代表投票成功</p>
+                                <p class="text-slate-700 font-bold text-xs">點選 BOYNEXTDOOR 再次投票</p>
                             </div>
                             <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[260px] mx-auto">
                                 <div class="-mt-[10%]">
@@ -118,7 +118,7 @@
 
                     </div>
 
-                    <!-- 左右輔助切換箭頭（點擊可直接切換圖片） -->
+                    <!-- 左右輔助切換箭頭 -->
                     <button onclick="moveSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold hover:bg-black/60 z-10">❮</button>
                     <button onclick="moveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
@@ -237,9 +237,9 @@
                 </div>
 
                 <div class="space-y-3.5 text-xs">
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 1</span><p class="text-slate-700">開啟 LiNC APP，在首頁「SBS Inkigayo 事前投票」區塊點選 <strong>        투表하기</strong>。</p></div>
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 2</span><p class="text-slate-700">在候補名單中選擇 <strong>BOYNEXTDOOR (VIRAL)</strong>，並點選下方 <strong>        투表하기</strong>。</p></div>
-                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 3</span><p class="text-slate-700">選擇票數（1~10票），選擇使用「粉絲點數(P)」或「寶石(Gem)」後，點選 <strong>        투表하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 1</span><p class="text-slate-700">開啟 LiNC APP，在首頁「SBS Inkigayo 事前投票」區塊點選 <strong>투표하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 2</span><p class="text-slate-700">在候補名單中選擇 <strong>BOYNEXTDOOR (VIRAL)</strong>，並點選下方 <strong>투표하기</strong>。</p></div>
+                    <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 3</span><p class="text-slate-700">選擇票數（1~10票），選擇使用「粉絲點數(P)」或「寶石(Gem)」後，點選 <strong>투표하기</strong>。</p></div>
                     <div class="flex gap-2.5"><span class="font-bold text-rose-500">STEP 4</span><p class="text-slate-700">出現完成畫面代表投票成功！每個帳號每天投 10 票。</p></div>
                 </div>
                 <div class="mt-4 p-3 bg-amber-50 text-amber-800 border border-amber-100 rounded-xl text-[11px]">
@@ -308,7 +308,7 @@
             dots.forEach((dot, i) => {
                 if (i === index) {
                     dot.classList.remove('bg-slate-200');
-                    dot.classList.add('bg-pink-500', 'w-4'); // 當前活動點拉長
+                    dot.classList.add('bg-pink-500', 'w-4');
                 } else {
                     dot.classList.remove('bg-pink-500', 'w-4');
                     dot.classList.add('bg-slate-200');
