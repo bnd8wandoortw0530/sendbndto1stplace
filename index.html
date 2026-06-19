@@ -18,33 +18,38 @@
 </head>
 <body class="bg-sky-50/30 text-slate-800 font-sans antialiased pb-16 text-base">
 
-    <!-- APP 頂部導覽列 -->
-    <header class="bg-gradient-to-r from-sky-400 to-blue-400 text-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-lg mx-auto px-5 py-5 flex flex-col items-center">
-            <h1 class="text-xl font-bold tracking-wider flex items-center gap-2">
-                🏆音樂節目投票指南🏆
-            </h1>
-        </div>
-    </header>
+    <!-- === 置頂導覽與四大節目選單區塊 === -->
+    <div class="sticky top-0 z-50 bg-sky-50/95 backdrop-blur-md pb-4 shadow-sm">
+        <!-- APP 頂部導覽列 -->
+        <header class="bg-gradient-to-r from-sky-400 to-blue-400 text-white py-4 mb-3">
+            <div class="max-w-lg mx-auto px-5 flex flex-col items-center">
+                <h1 class="text-xl font-extrabold tracking-wider flex items-center gap-2">
+                    🏆音樂節目投票指南🏆
+                </h1>
+            </div>
+        </header>
 
-    <!-- 主容器 -->
-    <main class="max-w-lg mx-auto px-5 mt-6">
-        
-        <!-- 節目切換頁籤 (Tabs) -->
-        <div class="grid grid-cols-4 gap-1.5 bg-white p-2 rounded-xl shadow-sm border border-sky-100/60 mb-6 text-sm">
-            <button onclick="switchTab('mcd')" id="tab-mcd" class="tab-btn py-3 font-bold rounded-lg text-center transition-all bg-sky-400 text-white shadow-sm">
-                MCD
-            </button>
-            <button onclick="switchTab('mb')" id="tab-mb" class="tab-btn py-3 font-bold rounded-lg text-center transition-all text-slate-600 hover:bg-slate-50">
-                Music Bank
-            </button>
-            <button onclick="switchTab('mc')" id="tab-mc" class="tab-btn py-3 font-bold rounded-lg text-center transition-all text-slate-600 hover:bg-slate-50">
-                Music Core
-            </button>
-            <button onclick="switchTab('inki')" id="tab-inki" class="tab-btn py-3 font-bold rounded-lg text-center transition-all text-slate-600 hover:bg-slate-50">
-                Inkigayo
-            </button>
+        <!-- 節目切換頁籤 (加強區塊色設計) -->
+        <div class="max-w-lg mx-auto px-5">
+            <div class="grid grid-cols-4 gap-1.5 bg-sky-100 p-1.5 rounded-xl border border-sky-200 shadow-inner text-sm">
+                <button onclick="switchTab('mcd')" id="tab-mcd" class="tab-btn py-3 font-extrabold rounded-lg text-center transition-all bg-gradient-to-r from-blue-500 to-sky-500 text-white shadow-md">
+                    MCD
+                </button>
+                <button onclick="switchTab('mb')" id="tab-mb" class="tab-btn py-3 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-850 border border-sky-200/40 hover:bg-sky-50">
+                    Music Bank
+                </button>
+                <button onclick="switchTab('mc')" id="tab-mc" class="tab-btn py-3 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-850 border border-sky-200/40 hover:bg-sky-50">
+                    Music Core
+                </button>
+                <button onclick="switchTab('inki')" id="tab-inki" class="tab-btn py-3 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-850 border border-sky-200/40 hover:bg-sky-50">
+                    Inkigayo
+                </button>
+            </div>
         </div>
+    </div>
+
+    <!-- 主內容區 -->
+    <main class="max-w-lg mx-auto px-5 mt-4">
 
         <!-- ==================== 一、Mnet M Countdown ==================== -->
         <section id="content-mcd" class="tab-content space-y-8">
@@ -501,7 +506,7 @@
             <!-- ==================== A. LiNC APP 區塊 ==================== -->
             <div class="space-y-6">
                 <h2 class="text-xl font-extrabold text-slate-900 tracking-wide border-b-2 border-slate-200 pb-2 flex items-center gap-2">
-                    <span>📱</span> LiNC APP 指慢
+                    <span>📱</span> LiNC APP 指南
                 </h2>
 
                 <!-- 事前投票 -->
@@ -670,18 +675,18 @@
 
     <!-- 頁籤與輪播圖控制邏輯 JavaScript -->
     <script>
-        // ======= 1. 節目頁籤切換邏輯 =======
+        // ======= 1. 節目頁籤切換邏輯 (配合全新色區塊樣式同步) =======
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('bg-sky-400', 'text-white', 'shadow-sm');
-                btn.classList.add('text-slate-600', 'hover:bg-slate-50');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-500', 'to-sky-500', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white/90', 'text-sky-850', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
             });
 
             document.getElementById('content-' + tabId).classList.remove('hidden');
             const activeBtn = document.getElementById('tab-' + tabId);
-            activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-50');
-            activeBtn.classList.add('bg-sky-400', 'text-white', 'shadow-sm');
+            activeBtn.classList.remove('bg-white/90', 'text-sky-850', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
+            activeBtn.classList.add('bg-gradient-to-r', 'from-blue-500', 'to-sky-500', 'text-white', 'shadow-md');
         }
 
         // ======= 2. MCD 輪播監聽 =======
