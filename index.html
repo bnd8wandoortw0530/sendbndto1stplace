@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏆音樂節目投票指南🏆</title>
     
+    <!-- 基礎斷網防禦樣式：確保無網路時依然有底色與清晰文字，絕不變一片空白 -->
     <style>
         body { background-color: #f0f7ff; color: #1e293b; font-family: sans-serif; margin: 0; padding: 0; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-        /* 圖片失效時的精緻備援樣式，防止畫面塌陷 */
+        /* 圖片失效時的備援樣式，防止畫面塌陷 */
         img { display: block; min-height: 150px; background-color: #e2e8f0; position: relative; }
         img:after { 
             content: "⚠️ 圖片載入中或已失效 \A 📌 提示：" attr(alt); 
@@ -19,10 +20,12 @@
         }
     </style>
 
+    <!-- 引入 Tailwind CSS 雲端庫 -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-sky-50/30 text-slate-800 font-sans antialiased text-base">
 
+    <!-- === 置頂導覽與五大分頁選單區塊 === -->
     <div class="sticky top-0 z-50 bg-sky-50/95 backdrop-blur-md pb-4 shadow-sm">
         <header class="bg-gradient-to-r from-sky-400 to-blue-400 text-white py-4 mb-3">
             <div class="max-w-lg mx-auto px-5 flex flex-col items-center">
@@ -30,21 +33,104 @@
             </div>
         </header>
 
-        <div class="max-w-lg mx-auto px-5">
-            <div class="grid grid-cols-4 gap-1.5 bg-sky-100 p-1.5 rounded-xl border border-sky-200 shadow-inner text-sm">
-                <button onclick="switchTab('mcd')" id="tab-mcd" class="tab-btn py-3 font-extrabold rounded-lg text-center transition-all bg-gradient-to-r from-blue-500 to-sky-500 text-white shadow-md">MCD</button>
-                <button onclick="switchTab('mb')" id="tab-mb" class="tab-btn py-3 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-850 border border-sky-200/40 hover:bg-sky-50">Music Bank</button>
-                <button onclick="switchTab('mc')" id="tab-mc" class="tab-btn py-3 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-850 border border-sky-200/40 hover:bg-sky-50">Music Core</button>
-                <button onclick="switchTab('inki')" id="tab-inki" class="tab-btn py-3 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-850 border border-sky-200/40 hover:bg-sky-50">Inkigayo</button>
+        <div class="max-w-lg mx-auto px-4">
+            <!-- 調整為 5 格網格，微調間距與字型大小防止手機版擠壓 -->
+            <div class="grid grid-cols-5 gap-1 bg-sky-100 p-1 rounded-xl border border-sky-200 shadow-inner text-xs sm:text-sm">
+                <button onclick="switchTab('home')" id="tab-home" class="tab-btn py-2.5 font-extrabold rounded-lg text-center transition-all bg-gradient-to-r from-blue-500 to-sky-500 text-white shadow-md">首頁</button>
+                <button onclick="switchTab('mcd')" id="tab-mcd" class="tab-btn py-2.5 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-900 border border-sky-200/40 hover:bg-sky-50">MCD</button>
+                <button onclick="switchTab('mb')" id="tab-mb" class="tab-btn py-2.5 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-900 border border-sky-200/40 hover:bg-sky-50">Music Bank</button>
+                <button onclick="switchTab('mc')" id="tab-mc" class="tab-btn py-2.5 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-900 border border-sky-200/40 hover:bg-sky-50">Music Core</button>
+                <button onclick="switchTab('inki')" id="tab-inki" class="tab-btn py-2.5 font-extrabold rounded-lg text-center transition-all bg-white/90 text-sky-900 border border-sky-200/40 hover:bg-sky-50">Inkigayo</button>
             </div>
         </div>
     </div>
 
+    <!-- 主內容區 -->
     <main class="max-w-lg mx-auto px-5 mt-4">
 
-        <section id="content-mcd" class="tab-content space-y-8">
+        <!-- ==================== 預設首頁：事前投票時間表 ==================== -->
+        <section id="content-home" class="tab-content space-y-6">
+            <div class="bg-gradient-to-br from-blue-500 to-sky-400 text-white p-5 rounded-2xl shadow-md">
+                <h2 class="font-bold text-lg mb-1 flex items-center gap-2">📅 本週事前投票時間表</h2>
+                <p class="text-xs text-blue-50/80">以下皆已換算為 ⏰ <b>台灣時間 (TST)</b>，請定好鬧鐘不要錯過喔！</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4">
+                <!-- MCD -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-3 h-3 bg-pink-400 rounded-full"></span>
+                            <h3 class="font-extrabold text-slate-900 text-base">M Countdown</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 pl-5 leading-relaxed">
+                            <span class="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-semibold mr-1">台灣時間</span>
+                            <span class="font-semibold text-slate-800">週五 23:00 ～ 週一 22:59</span>
+                        </p>
+                    </div>
+                    <button onclick="switchTab('mcd')" class="mt-4 w-full bg-sky-50 hover:bg-sky-100 text-sky-600 text-xs font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
+                        查看投票教學 ➜
+                    </button>
+                </div>
+
+                <!-- Music Bank -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-3 h-3 bg-sky-400 rounded-full"></span>
+                            <h3 class="font-extrabold text-slate-900 text-base">Music Bank</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 pl-5 leading-relaxed">
+                            <span class="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-semibold mr-1">台灣時間</span>
+                            <span class="font-semibold text-slate-800">週日 14:00 ～ 週三 10:00</span>
+                        </p>
+                    </div>
+                    <button onclick="switchTab('mb')" class="mt-4 w-full bg-sky-50 hover:bg-sky-100 text-sky-600 text-xs font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
+                        查看投票教學 ➜
+                    </button>
+                </div>
+
+                <!-- Music Core -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-3 h-3 bg-emerald-400 rounded-full"></span>
+                            <h3 class="font-extrabold text-slate-900 text-base">Show! Music Core</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 pl-5 leading-relaxed">
+                            <span class="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-semibold mr-1">台灣時間</span>
+                            <span class="font-semibold text-slate-800">週二 17:00 ～ 週四 10:00</span>
+                        </p>
+                    </div>
+                    <button onclick="switchTab('mc')" class="mt-4 w-full bg-sky-50 hover:bg-sky-100 text-sky-600 text-xs font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
+                        查看投票教學 ➜
+                    </button>
+                </div>
+
+                <!-- Inkigayo -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-3 h-3 bg-purple-400 rounded-full"></span>
+                            <h3 class="font-extrabold text-slate-900 text-base">Inkigayo</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 pl-5 leading-relaxed">
+                            <span class="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-semibold mr-1">台灣時間</span>
+                            <span class="font-semibold text-slate-800">週一 11:00 ～ 週五 22:59</span>
+                        </p>
+                    </div>
+                    <button onclick="switchTab('inki')" class="mt-4 w-full bg-sky-50 hover:bg-sky-100 text-sky-600 text-xs font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
+                        查看投票教學 ➜
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 一、Mnet M Countdown ==================== -->
+        <section id="content-mcd" class="tab-content space-y-8 hidden">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-700 font-medium">📌 投票工具：Mnet Plus APP</div>
             
+            <!-- 事前投票 -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-pink-400 rounded-full"></span> 事前投票 (Pre-Vote)</h3>
@@ -101,6 +187,7 @@
                 </div>
             </div>
 
+            <!-- 實時投票 -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-purple-400 rounded-full"></span> 實時一位投票 (Live Vote)</h3>
@@ -149,7 +236,7 @@
                     <button onclick="moveLiveSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
                     <button onclick="moveLiveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
                 </div>
-                <div class="flex justify-center gap-1.5 mt-3" id="live-slider-dots">
+                <div class="flex justify-center gap-1.5 mt-3" id="mcd-live-dots">
                     <span class="w-4 h-2 rounded-full bg-purple-400 transition-all duration-300" id="live-dot-0"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="live-dot-1"></span>
                     <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="live-dot-2"></span>
@@ -158,6 +245,7 @@
             </div>
         </section>
 
+        <!-- ==================== 二、KBS Music Bank ==================== -->
         <section id="content-mb" class="tab-content space-y-8 hidden">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-700 font-medium">📌 投票工具：FANCAST APP</div>
 
@@ -218,12 +306,15 @@
             </div>
         </section>
 
+        <!-- ==================== 三、MBC Show! Music Core ==================== -->
         <section id="content-mc" class="tab-content space-y-10 hidden">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-700 font-medium">📌 投票工具：Mubeat APP 與 Muniverse APP</div>
 
+            <!-- Mubeat APP 區塊 -->
             <div class="space-y-6">
                 <h2 class="text-xl font-extrabold text-slate-900 tracking-wide border-b-2 border-slate-200 pb-2 flex items-center gap-2"><span>📱</span> Mubeat APP 指南</h2>
 
+                <!-- 1. Mubeat Heart Beats 獲取方式 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-green-400 rounded-full"></span> Mubeat Heart Beats 獲取方式</h3>
@@ -259,6 +350,7 @@
                     </div>
                 </div>
 
+                <!-- 2. Mubeat 事前投票 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-pink-400 rounded-full"></span> Mubeat 事前投票 (Pre-Vote)</h3>
@@ -294,6 +386,7 @@
                     </div>
                 </div>
 
+                <!-- 3. Mubeat 實時投票 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-purple-400 rounded-full"></span> Mubeat 實時投票 (Live Vote)</h3>
@@ -314,7 +407,7 @@
                                 <div class="flex gap-2 items-center mb-2">
                                     <span class="bg-purple-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span>
                                     <p class="text-slate-700 font-bold text-sm">將 Heart Beats 兌換成實時投票券並完成投票</p>
-                                </div>
+                                }
                                 <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto">
                                     <div class="-mt-[10%]"><img src="https://i.ibb.co/PsmwcPVw/S-126337035.jpg" class="w-full h-auto block" alt="使用累積點數兌換為實時票，投給一位候補 BOYNEXTDOOR，上限 5 票"></div>
                                 </div>
@@ -330,9 +423,11 @@
                 </div>
             </div>
 
+            <!-- Muniverse APP 區塊 -->
             <div class="space-y-6 pt-4">
                 <h2 class="text-xl font-extrabold text-slate-900 tracking-wide border-b-2 border-slate-200 pb-2 flex items-center gap-2"><span>📱</span> Muniverse APP 指南</h2>
 
+                <!-- 4. Muniverse Lumy 獲取方式 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-green-400 rounded-full"></span> Muniverse Lumy 獲取方式</h3>
@@ -368,6 +463,7 @@
                     </div>
                 </div>
 
+                <!-- 5. Muniverse 事前投票 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-pink-400 rounded-full"></span> Muniverse 事前投票 (Pre-Vote)</h3>
@@ -403,6 +499,7 @@
                     </div>
                 </div>
 
+                <!-- 6. Muniverse 實時投票 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-purple-400 rounded-full"></span> Muniverse 實時投票 (Live Vote)</h3>
@@ -440,9 +537,11 @@
             </div>
         </section>
 
+        <!-- ==================== 四、SBS Inkigayo ==================== -->
         <section id="content-inki" class="tab-content space-y-10 hidden">
             <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-700 font-medium">📌 投票工具：LiNC APP 與 Higher APP</div>
 
+            <!-- LiNC APP 區塊 -->
             <div class="space-y-6">
                 <h2 class="text-xl font-extrabold text-slate-900 tracking-wide border-b-2 border-slate-200 pb-2 flex items-center gap-2"><span>📱</span> LiNC APP 指南</h2>
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
@@ -491,6 +590,7 @@
                 </div>
             </div>
 
+            <!-- Higher APP 區塊 -->
             <div class="space-y-6 pt-4">
                 <h2 class="text-xl font-extrabold text-slate-900 tracking-wide border-b-2 border-slate-200 pb-2 flex items-center gap-2"><span>📱</span> Higher APP 指南</h2>
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
@@ -542,6 +642,7 @@
                     </div>
                 </div>
 
+                <!-- 實時投票 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                         <h3 class="font-bold text-base text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-purple-400 rounded-full"></span> 實時投票 (Live Vote)</h3>
@@ -589,6 +690,7 @@
             </div>
         </section>
 
+        <!-- === 頁尾免責與製作聲明 === -->
         <footer class="mt-14 mb-8 border-t border-slate-200/60 pt-6 text-center text-xs text-slate-400 leading-relaxed">
             <p>免責聲明：本指南內容僅供參考，相關投票規則與操作介面均以各官方 APP 最新公告為準。</p>
             <p class="mt-1 font-semibold text-slate-500">由 8WanDoor 製作</p>
@@ -596,21 +698,30 @@
 
     </main>
 
+    <!-- 頁籤與輪播圖控制邏輯 JavaScript -->
     <script>
         function switchTab(tabId) {
             try {
+                // 隱藏所有分頁內容
                 document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+                
+                // 還原所有按鈕樣式
                 document.querySelectorAll('.tab-btn').forEach(btn => {
                     btn.classList.remove('bg-gradient-to-r', 'from-blue-500', 'to-sky-500', 'text-white', 'shadow-md');
-                    btn.classList.add('bg-white/90', 'text-sky-850', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
+                    btn.classList.add('bg-white/90', 'text-sky-900', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
                 });
+                
+                // 顯示目標分頁與高亮按鈕
                 const targetContent = document.getElementById('content-' + tabId);
                 const activeBtn = document.getElementById('tab-' + tabId);
                 if (targetContent) targetContent.classList.remove('hidden');
                 if (activeBtn) {
-                    activeBtn.classList.remove('bg-white/90', 'text-sky-850', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
+                    activeBtn.classList.remove('bg-white/90', 'text-sky-900', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
                     activeBtn.classList.add('bg-gradient-to-r', 'from-blue-500', 'to-sky-500', 'text-white', 'shadow-md');
                 }
+                
+                // 切換分頁時自動置頂，優化閱讀體驗
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } catch (e) { console.error("SwitchTab Error: ", e); }
         }
 
@@ -636,7 +747,6 @@
         }
 
         try {
-            const sliderMCD = document.getElementById('mcd-slider');
             setupSliderListener('mcd-slider', ['dot-0', 'dot-1', 'dot-2', 'dot-3'], 'bg-pink-400');
             setupSliderListener('mcd-live-slider', ['live-dot-0', 'live-dot-1', 'live-dot-2', 'live-dot-3'], 'bg-purple-400');
             setupSliderListener('mb-slider', ['mb-dot-0', 'mb-dot-1', 'mb-dot-2', 'mb-dot-3'], 'bg-pink-400');
