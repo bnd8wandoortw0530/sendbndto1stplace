@@ -100,7 +100,7 @@
                         </div>
                         <p class="text-sm text-slate-600 pl-5 leading-relaxed">
                             <span class="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-semibold mr-1">台灣時間</span>
-                            <span id="time-mc" class="font-semibold text-slate-800">週二 17:00 ～ 週開 10:00</span>
+                            <span id="time-mc" class="font-semibold text-slate-800">週二 17:00 ～ 週四 10:00</span>
                         </p>
                     </div>
                     <button onclick="switchTab('mc')" class="mt-4 w-full bg-sky-50 hover:bg-sky-100 text-sky-600 text-xs font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
@@ -242,16 +242,143 @@
         </section>
 
         <!-- ==================== 三、MBC Show! Music Core ==================== -->
-        <section id="content-mc" class="tab-content space-y-10 hidden">
-            <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-700 font-medium">📌 投票工具：Mubeat APP 與 Muniverse APP</div>
-            <!-- 內容省略，保持與先前版本完全一致 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center text-sm text-slate-400 py-12">（音核及人歌圖文指南完整保留中...）</div>
+        <section id="content-mc" class="tab-content space-y-8 hidden">
+            <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-700 font-medium">📌 投票工具：Mubeat APP</div>
+            <!-- 事前投票 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                    <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-emerald-400 rounded-full"></span> 事前投票 (Pre-Vote)</h3>
+                </div>
+                <p class="text-sm text-slate-500 mb-4 leading-relaxed"><strong>期間：</strong>每週二 18:00 ~ 每週四 11:00 (KST)<br><strong>消耗：</strong>每次投票消耗 <span class="text-emerald-500 font-bold">3 Heart Beats</span><br><strong>限制：</strong>事前投票階段<span class="text-emerald-500 font-bold">無投遞上限</span></p>
+                <div class="relative group mb-3">
+                    <div id="mc-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-emerald-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span><p class="text-slate-700 font-bold text-sm">點擊 Mubeat 首頁的「Show! Music Core 事前投票」活動橫幅</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Show!+Music+Core+Banner" class="w-full h-auto block" alt="打開 Mubeat，點選 Show! Music Core 事前投票專區"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-emerald-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span><p class="text-slate-700 font-bold text-sm">在候選名單中尋找 BOYNEXTDOOR 並點擊投票鈕</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Find+BOYNEXTDOOR" class="w-full h-auto block" alt="在名單中勾選 BOYNEXTDOOR"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-emerald-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span><p class="text-slate-700 font-bold text-sm">輸入欲投遞的 Heart Beats 數量並確認</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Input+Heart+Beats" class="w-full h-auto block" alt="輸入要投的點數數量後確認送出"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-emerald-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span><p class="text-slate-700 font-bold text-sm">出現投票完成彈窗，即可繼續點擊或切換帳號多投</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Pre-vote+Success" class="w-full h-auto block" alt="顯示投票已成功扣點的確認彈窗"></div></div>
+                        </div>
+                    </div>
+                    <button onclick="moveMCSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                    <button onclick="moveMCSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                </div>
+                <div class="flex justify-center gap-1.5 mt-3" id="mc-slider-dots">
+                    <span class="w-4 h-2 rounded-full bg-emerald-400 transition-all duration-300" id="mc-dot-0"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-dot-1"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-dot-2"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-dot-3"></span>
+                </div>
+            </div>
+            <!-- 實時投票 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                    <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-teal-400 rounded-full"></span> 實時一位投票 (Live Vote)</h3>
+                </div>
+                <p class="text-sm text-slate-500 mb-4 leading-relaxed"><strong>期間：</strong>每週六節目直播期間（需當期晉級前三名候補）<br><strong>限制：</strong>每個帳號最多可投 <span class="text-teal-500 font-bold">5 票</span>（每次投遞需消耗 30 Heart Beats）</p>
+                <div class="relative group mb-3">
+                    <div id="mc-live-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-teal-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span><p class="text-slate-700 font-bold text-sm">直播開始，點選 Mubeat 首頁「Show! Music Core 即時投票」入口</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Music+Core+Live+Vote" class="w-full h-auto block" alt="點選即時投票橫幅"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-teal-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span><p class="text-slate-700 font-bold text-sm">選擇一位候補 BOYNEXTDOOR 並扣除心心提交投票</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=BND+Live+Vote+Submit" class="w-full h-auto block" alt="選擇 BOYNEXTDOOR 並點選投遞"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-teal-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span><p class="text-slate-700 font-bold text-sm">確認投票成功，重複動作直到將 5 票額度全數投完</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Live+Vote+5+Success" class="w-full h-auto block" alt="完成 5 票實時投遞"></div></div>
+                        </div>
+                    </div>
+                    <button onclick="moveMCLiveSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                    <button onclick="moveMCLiveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                </div>
+                <div class="flex justify-center gap-1.5 mt-3" id="mc-live-dots">
+                    <span class="w-4 h-2 rounded-full bg-teal-400 transition-all duration-300" id="mc-live-dot-0"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-live-dot-1"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="mc-live-dot-2"></span>
+                </div>
+            </div>
         </section>
 
         <!-- ==================== 四、SBS Inkigayo ==================== -->
-        <section id="content-inki" class="tab-content space-y-10 hidden">
-            <!-- 內容省略，保持與先前版本完全一致 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center text-sm text-slate-400 py-12">（人氣歌謠詳細圖文指南完整保留中...）</div>
+        <section id="content-inki" class="tab-content space-y-8 hidden">
+            <div class="bg-sky-50 border border-sky-100 p-4 rounded-xl text-sm text-sky-700 font-medium">📌 投票工具：SuperStar X APP</div>
+            <!-- 事前投票 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                    <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-purple-400 rounded-full"></span> 事前投票 (Pre-Vote)</h3>
+                </div>
+                <p class="text-sm text-slate-500 mb-4 leading-relaxed"><strong>期間：</strong>每週一 12:00 ~ 每週五 18:00 (KST)<br><strong>消耗：</strong>每次投票消耗紅寶石 (Ruby)<br><strong>限制：</strong>依玩家與帳號所擁有的免費/付費紅寶石量多投</p>
+                <div class="relative group mb-3">
+                    <div id="inki-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-purple-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span><p class="text-slate-700 font-bold text-sm">登入 SuperStar X 進入人氣歌謠投票專區</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=SuperStar+X+Home" class="w-full h-auto block" alt="開啟 SuperStar X App 點選投票橫幅"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-purple-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span><p class="text-slate-700 font-bold text-sm">在候選名單中尋找 BOYNEXTDOOR 的歌曲</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Select+BOYNEXTDOOR+Song" class="w-full h-auto block" alt="找到候選組別中的 BOYNEXTDOOR"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-purple-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span><p class="text-slate-700 font-bold text-sm">輸入要消耗的紅寶石數量進行投票</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Use+Ruby" class="w-full h-auto block" alt="輸入紅寶石數量送出"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-purple-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">4</span><p class="text-slate-700 font-bold text-sm">確認投票完成，出現完成畫面即投票成功</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Ruby+Vote+Completed" class="w-full h-auto block" alt="彈出投票成功結算畫面"></div></div>
+                        </div>
+                    </div>
+                    <button onclick="moveInkiSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                    <button onclick="moveInkiSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                </div>
+                <div class="flex justify-center gap-1.5 mt-3" id="inki-slider-dots">
+                    <span class="w-4 h-2 rounded-full bg-purple-400 transition-all duration-300" id="inki-dot-0"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="inki-dot-1"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="inki-dot-2"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="inki-dot-3"></span>
+                </div>
+            </div>
+            <!-- 實時投票 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                    <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2"><span class="w-2.5 h-5 bg-indigo-400 rounded-full"></span> 實時一位投票 (Live Vote)</h3>
+                </div>
+                <p class="text-sm text-slate-500 mb-4 leading-relaxed"><strong>期間：</strong>每週日節目直播期間（當入圍前三名候選時）<br><strong>限制：</strong>每個帳號最多可投 <span class="text-indigo-500 font-bold">5 票</span></p>
+                <div class="relative group mb-3">
+                    <div id="inki-live-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 pb-2">
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-indigo-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">1</span><p class="text-slate-700 font-bold text-sm">直播開始時，點選首頁「Inkigayo Live Vote」即時投票專區</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Inkigayo+Live+Vote" class="w-full h-auto block" alt="進入 SuperStar X 即時投票介面"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-indigo-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">2</span><p class="text-slate-700 font-bold text-sm">選擇候選組別 BOYNEXTDOOR</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Vote+For+BND+Inki+Live" class="w-full h-auto block" alt="選中並為 BOYNEXTDOOR 點選投遞"></div></div>
+                        </div>
+                        <div class="w-full shrink-0 snap-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="flex gap-2 items-center mb-2"><span class="bg-indigo-400 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">3</span><p class="text-slate-700 font-bold text-sm">消耗紅寶石投滿 5 票上限</p></div>
+                            <div class="overflow-hidden rounded-lg border border-slate-200 bg-white max-w-[280px] mx-auto"><div class="-mt-[10%]"><img src="https://placehold.co/280x450/e2e8f0/475569?text=Inki+Live+Completed" class="w-full h-auto block" alt="投完 5 次即時票額度"></div></div>
+                        </div>
+                    </div>
+                    <button onclick="moveInkiLiveSlider(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❮</button>
+                    <button onclick="moveInkiLiveSlider(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold hover:bg-black/60 z-10">❯</button>
+                </div>
+                <div class="flex justify-center gap-1.5 mt-3" id="inki-live-dots">
+                    <span class="w-4 h-2 rounded-full bg-indigo-400 transition-all duration-300" id="inki-live-dot-0"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="inki-live-dot-1"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-200 transition-all duration-300" id="inki-live-dot-2"></span>
+                </div>
+            </div>
         </section>
 
 
@@ -337,6 +464,10 @@
             document.getElementById('mcd-slider')?.addEventListener('scroll', () => updateSliderDots('mcd-slider', 'slider-dots', 'bg-pink-400'));
             document.getElementById('mcd-live-slider')?.addEventListener('scroll', () => updateSliderDots('mcd-live-slider', 'mcd-live-dots', 'bg-purple-400'));
             document.getElementById('mb-slider')?.addEventListener('scroll', () => updateSliderDots('mb-slider', 'mb-slider-dots', 'bg-pink-400'));
+            document.getElementById('mc-slider')?.addEventListener('scroll', () => updateSliderDots('mc-slider', 'mc-slider-dots', 'bg-emerald-400'));
+            document.getElementById('mc-live-slider')?.addEventListener('scroll', () => updateSliderDots('mc-live-slider', 'mc-live-dots', 'bg-teal-400'));
+            document.getElementById('inki-slider')?.addEventListener('scroll', () => updateSliderDots('inki-slider', 'inki-slider-dots', 'bg-purple-400'));
+            document.getElementById('inki-live-slider')?.addEventListener('scroll', () => updateSliderDots('inki-live-slider', 'inki-live-dots', 'bg-indigo-400'));
         });
 
         // 載入與渲染資料（從 localStorage 讀取，沒有就拿預設）
@@ -446,6 +577,26 @@
 
         function moveMBSlider(direction) {
             const slider = document.getElementById('mb-slider');
+            if (slider) slider.scrollBy({ left: direction * slider.clientWidth, behavior: 'smooth' });
+        }
+
+        function moveMCSlider(direction) {
+            const slider = document.getElementById('mc-slider');
+            if (slider) slider.scrollBy({ left: direction * slider.clientWidth, behavior: 'smooth' });
+        }
+
+        function moveMCLiveSlider(direction) {
+            const slider = document.getElementById('mc-live-slider');
+            if (slider) slider.scrollBy({ left: direction * slider.clientWidth, behavior: 'smooth' });
+        }
+
+        function moveInkiSlider(direction) {
+            const slider = document.getElementById('inki-slider');
+            if (slider) slider.scrollBy({ left: direction * slider.clientWidth, behavior: 'smooth' });
+        }
+
+        function moveInkiLiveSlider(direction) {
+            const slider = document.getElementById('inki-live-slider');
             if (slider) slider.scrollBy({ left: direction * slider.clientWidth, behavior: 'smooth' });
         }
 
