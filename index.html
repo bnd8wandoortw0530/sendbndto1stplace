@@ -626,135 +626,177 @@
         </section>
 
         <!-- === 頁尾免責與製作聲明 === -->
-        <footer class="mt-14 mb-8 border-t border-slate-200/60 pt-6 text-center text-xs text-slate-400 leading-relaxed">
-            <p>免責聲明：本指南內容僅供參考，相關投票規則與操作介面均以各官方 APP 最新公告為準。</p>
-            <!-- 增加點擊計數觸發後台 -->
-            <p id="footer-logo" onclick="handleFooterClick()" class="mt-2 font-semibold text-slate-500 cursor-pointer select-none active:text-sky-500 transition-colors">由 8WanDoor 製作</p>
-        </footer>
+       <footer class="mt-14 mb-8 border-t border-slate-200/60 pt-6 text-center text-xs text-slate-400 leading-relaxed">
+    <p>免責聲明：本指南內容僅供參考，相關投票規則與操作介面均以各官方 APP 最新公告為準。</p>
+    <p id="footer-logo" onclick="handleFooterClick()" class="mt-2 font-semibold text-slate-500 cursor-pointer select-none active:text-sky-500 transition-colors">由 8WanDoor 製作</p>
+</footer>
 
-    </main>
+<div id="admin-panel" class="hidden max-w-2xl mx-auto my-8 p-6 bg-white rounded-xl shadow-lg border border-slate-200/80 text-left">
+    <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">🛠️ 8WanDoor 後台管理系統</h2>
+    
+    <div class="space-y-4">
+        <div>
+            <label class="block text-sm font-semibold text-slate-600 mb-1">📢 公告標題</label>
+            <input type="text" id="input-ann-title" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-sky-500 text-sm">
+        </div>
+        <div>
+            <label class="block text-sm font-semibold text-slate-600 mb-1">📝 公告內容</label>
+            <textarea id="input-ann-content" rows="4" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-sky-500 text-sm"></textarea>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm font-semibold text-slate-600 mb-1">⏱️ MCD 投票時間</label>
+                <input type="text" id="input-time-mcd" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-sky-500 text-sm">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-slate-600 mb-1">⏱️ MB 投票時間</label>
+                <input type="text" id="input-time-mb" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-sky-500 text-sm">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-slate-600 mb-1">⏱️ MC 投票時間</label>
+                <input type="text" id="input-time-mc" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-sky-500 text-sm">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-slate-600 mb-1">⏱️ Inki 投票時間</label>
+                <input type="text" id="input-time-inki" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-sky-500 text-sm">
+            </div>
+        </div>
+        
+        <div class="flex justify-end gap-3 mt-6 pt-4 border-t border-slate-100">
+            <button onclick="closeAdmin()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-medium rounded-lg transition-colors">取消關閉</button>
+            <button onclick="saveAdminData()" class="px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white text-sm font-medium rounded-lg transition-colors shadow-sm">儲存所有變更</button>
+        </div>
+    </div>
+</div>
 
-    <!-- 控制邏輯 JavaScript -->
-    <script>
-        // 後台密碼配置（可隨時在此處修改）
-        const ADMIN_PASSWORD = "8888"; 
-        let clickCount = 0;
-        let clickTimer = null;
+</main>
 
-        // 預設資料（防空包：當本機沒資料時自動套用此預設）
-        const defaultData = {
-            annTitle: "📢 站務公告與注意事項",
-            annContent: "歡迎使用音樂節目投票指南！請點選上方各節目查看詳細的圖文教學，一起為孩子們送上熱烈支持吧！\n\n📌 溫馨提醒：請記得隨時回來確認時間表，避免錯過投票截止時間喔！",
-            timeMcd: "週五 23:00 ～ 週一 22:59",
-            timeMb: "週日 14:00 ～ 週三 10:00",
-            timeMc: "週二 17:00 ～ 週四 10:00",
-            timeInki: "週一 11:00 ～ 週五 22:59"
-        };
+<script>
+    // 後台密碼配置（可隨時在此處修改）
+    const ADMIN_PASSWORD = "8888"; 
+    let clickCount = 0;
+    let clickTimer = null;
 
-        // 網頁載入時初始化資料
-        window.addEventListener('DOMContentLoaded', () => {
+    // 預設資料（防空包：當本機沒資料時自動套用此預設）
+    const defaultData = {
+        annTitle: "📢 站務公告與注意事項",
+        annContent: "歡迎使用音樂節目投票指南！請點選上方各節目查看詳細的圖文教學，一起為孩子們送上熱烈支持吧！\n\n📌 溫馨提醒：請記得隨時回來確認時間表，避免錯過投票截止時間喔！",
+        timeMcd: "週五 23:00 ～ 週一 22:59",
+        timeMb: "週日 14:00 ～ 週三 10:00",
+        timeMc: "週二 17:00 ～ 週開 10:00",
+        timeInki: "週一 11:00 ～ 週五 22:59"
+    };
+
+    // 網頁載入時初始化資料
+    window.addEventListener('DOMContentLoaded', () => {
+        loadAndRenderData();
+    });
+
+    // 載入與渲染資料（從 localStorage 讀取，沒有就拿預設）
+    function loadAndRenderData() {
+        try {
+            const data = {
+                annTitle: localStorage.getItem('annTitle') || defaultData.annTitle,
+                annContent: localStorage.getItem('annContent') || defaultData.annContent,
+                timeMcd: localStorage.getItem('timeMcd') || defaultData.timeMcd,
+                timeMb: localStorage.getItem('timeMb') || defaultData.timeMb,
+                timeMc: localStorage.getItem('timeMc') || defaultData.timeMc,
+                timeInki: localStorage.getItem('timeInki') || defaultData.timeInki
+            };
+
+            // 更新前端首頁顯示（加上安全檢查，防止網頁元素不存在時崩潰）
+            if (document.getElementById('display-ann-title')) document.getElementById('display-ann-title').innerText = data.annTitle;
+            if (document.getElementById('display-ann-content')) document.getElementById('display-ann-content').innerText = data.annContent;
+            if (document.getElementById('time-mcd')) document.getElementById('time-mcd').innerText = data.timeMcd;
+            if (document.getElementById('time-mb')) document.getElementById('time-mb').innerText = data.timeMb;
+            if (document.getElementById('time-mc')) document.getElementById('time-mc').innerText = data.timeMc;
+            if (document.getElementById('time-inki')) document.getElementById('time-inki').innerText = data.timeInki;
+
+            // 同步寫入後台輸入框
+            if (document.getElementById('input-ann-title')) document.getElementById('input-ann-title').value = data.annTitle;
+            if (document.getElementById('input-ann-content')) document.getElementById('input-ann-content').value = data.annContent;
+            if (document.getElementById('input-time-mcd')) document.getElementById('input-time-mcd').value = data.timeMcd;
+            if (document.getElementById('input-time-mb')) document.getElementById('input-time-mb').value = data.timeMb;
+            if (document.getElementById('input-time-mc')) document.getElementById('input-time-mc').value = data.timeMc;
+            if (document.getElementById('input-time-inki')) document.getElementById('input-time-inki').value = data.timeInki;
+
+        } catch (e) { console.error("資料載入失敗：", e); }
+    }
+
+    // 儲存後台數據
+    function saveAdminData() {
+        try {
+            localStorage.setItem('annTitle', document.getElementById('input-ann-title').value.trim());
+            localStorage.setItem('annContent', document.getElementById('input-ann-content').value.trim());
+            localStorage.setItem('timeMcd', document.getElementById('input-time-mcd').value.trim());
+            localStorage.setItem('timeMb', document.getElementById('input-time-mb').value.trim());
+            localStorage.setItem('timeMc', document.getElementById('input-time-mc').value.trim());
+            localStorage.setItem('timeInki', document.getElementById('input-time-inki').value.trim());
+
+            // 重新渲染並提示
             loadAndRenderData();
-        });
+            alert("🎉 所有變更已成功儲存並生效！");
+            closeAdmin();
+        } catch (e) { alert("儲存失敗，請檢查瀏覽器空間設定。"); }
+    }
 
-        // 載入與渲染資料（從 localStorage 讀取，沒有就拿預設）
-        function loadAndRenderData() {
-            try {
-                const data = {
-                    annTitle: localStorage.getItem('annTitle') || defaultData.annTitle,
-                    annContent: localStorage.getItem('annContent') || defaultData.annContent,
-                    timeMcd: localStorage.getItem('timeMcd') || defaultData.timeMcd,
-                    timeMb: localStorage.getItem('timeMb') || defaultData.timeMb,
-                    timeMc: localStorage.getItem('timeMc') || defaultData.timeMc,
-                    timeInki: localStorage.getItem('timeInki') || defaultData.timeInki
-                };
+    // 點擊 Footer 觸發密碼鎖後台
+    function handleFooterClick() {
+        clickCount++;
+        clearTimeout(clickTimer);
+        
+        // 3秒內沒連點會歸零
+        clickTimer = setTimeout(() => { clickCount = 0; }, 3000);
 
-                // 更新前端首頁顯示
-                document.getElementById('display-ann-title').innerText = data.annTitle;
-                document.getElementById('display-ann-content').innerText = data.annContent;
-                document.getElementById('time-mcd').innerText = data.timeMcd;
-                document.getElementById('time-mb').innerText = data.timeMb;
-                document.getElementById('time-mc').innerText = data.timeMc;
-                document.getElementById('time-inki').innerText = data.timeInki;
-
-                // 同步寫入後台輸入框
-                document.getElementById('input-ann-title').value = data.annTitle;
-                document.getElementById('input-ann-content').value = data.annContent;
-                document.getElementById('input-time-mcd').value = data.timeMcd;
-                document.getElementById('input-time-mb').value = data.timeMb;
-                document.getElementById('input-time-mc').value = data.timeMc;
-                document.getElementById('input-time-inki').value = data.timeInki;
-
-            } catch (e) { console.error("資料載入失敗：", e); }
-        }
-
-        // 儲存後台數據
-        function saveAdminData() {
-            try {
-                localStorage.setItem('annTitle', document.getElementById('input-ann-title').value.trim());
-                localStorage.setItem('annContent', document.getElementById('input-ann-content').value.trim());
-                localStorage.setItem('timeMcd', document.getElementById('input-time-mcd').value.trim());
-                localStorage.setItem('timeMb', document.getElementById('input-time-mb').value.trim());
-                localStorage.setItem('timeMc', document.getElementById('input-time-mc').value.trim());
-                localStorage.setItem('timeInki', document.getElementById('input-time-inki').value.trim());
-
-                // 重新渲染並提示
-                loadAndRenderData();
-                alert("🎉 所有變更已成功儲存並生效！");
-                closeAdmin();
-            } catch (e) { alert("儲存失敗，請檢查瀏覽器空間設定。"); }
-        }
-
-        // 點擊 Footer 觸發密碼鎖後台
-        function handleFooterClick() {
-            clickCount++;
-            clearTimeout(clickTimer);
-            
-            // 3秒內沒連點會歸零
-            clickTimer = setTimeout(() => { clickCount = 0; }, 3000);
-
-            // 連點 5 下解鎖密碼框
-            if (clickCount >= 5) {
-                clickCount = 0;
-                const pwd = prompt("🔒 請輸入後台管理密碼：");
-                if (pwd === ADMIN_PASSWORD) {
-                    const panel = document.getElementById('admin-panel');
+        // 連點 5 下解鎖密碼框
+        if (clickCount >= 5) {
+            clickCount = 0;
+            const pwd = prompt("🔒 請輸入後台管理密碼：");
+            if (pwd === ADMIN_PASSWORD) {
+                const panel = document.getElementById('admin-panel');
+                if (panel) {
                     panel.classList.remove('hidden');
                     panel.scrollIntoView({ behavior: 'smooth' });
-                } else if (pwd !== null) {
-                    alert("❌ 密碼錯誤！無法進入管理後台。");
+                } else {
+                    alert("❌ 系統錯誤：找不到後台面板網頁元素 (id='admin-panel')，請檢查 HTML 是否完整貼上！");
                 }
+            } else if (pwd !== null) {
+                alert("❌ 密碼錯誤！無法進入管理後台。");
             }
         }
+    }
 
-        function closeAdmin() {
-            document.getElementById('admin-panel').classList.add('hidden');
+    function closeAdmin() {
+        const panel = document.getElementById('admin-panel');
+        if (panel) panel.classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 基本分頁切換邏輯
+    function switchTab(tabId) {
+        try {
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-500', 'to-sky-500', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white/90', 'text-sky-900', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
+            });
+            
+            const targetContent = document.getElementById('content-' + tabId);
+            const activeBtn = document.getElementById('tab-' + tabId);
+            if (targetContent) targetContent.classList.remove('hidden');
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white/90', 'text-sky-900', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
+                activeBtn.classList.add('bg-gradient-to-r', 'from-blue-500', 'to-sky-500', 'text-white', 'shadow-md');
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        } catch (e) { console.error(e); }
+    }
 
-        // 基本分頁切換邏輯
-        function switchTab(tabId) {
-            try {
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
-                document.querySelectorAll('.tab-btn').forEach(btn => {
-                    btn.classList.remove('bg-gradient-to-r', 'from-blue-500', 'to-sky-500', 'text-white', 'shadow-md');
-                    btn.classList.add('bg-white/90', 'text-sky-900', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
-                });
-                
-                const targetContent = document.getElementById('content-' + tabId);
-                const activeBtn = document.getElementById('tab-' + tabId);
-                if (targetContent) targetContent.classList.remove('hidden');
-                if (activeBtn) {
-                    activeBtn.classList.remove('bg-white/90', 'text-sky-900', 'border', 'border-sky-200/40', 'hover:bg-sky-50');
-                    activeBtn.classList.add('bg-gradient-to-r', 'from-blue-500', 'to-sky-500', 'text-white', 'shadow-md');
-                }
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } catch (e) { console.error(e); }
-        }
-
-        // 輪播滑動控制 (其餘滑動邏輯完整保留)
-        function moveSlider(direction) { const s = document.getElementById('mcd-slider'); if(s) s.scrollLeft += ((s.getBoundingClientRect().width + 16) * direction); }
-        function moveLiveSlider(direction) { const s = document.getElementById('mcd-live-slider'); if(s) s.scrollLeft += ((s.getBoundingClientRect().width + 16) * direction); }
-        function moveMBSlider(direction) { const s = document.getElementById('mb-slider'); if(s) s.scrollLeft += ((s.getBoundingClientRect().width + 16) * direction); }
-    </script>
+    // 輪播滑動控制
+    function moveSlider(direction) { const s = document.getElementById('mcd-slider'); if(s) s.scrollLeft += ((s.getBoundingClientRect().width + 16) * direction); }
+    function moveLiveSlider(direction) { const s = document.getElementById('mcd-live-slider'); if(s) s.scrollLeft += ((s.getBoundingClientRect().width + 16) * direction); }
+    function moveMBSlider(direction) { const s = document.getElementById('mb-slider'); if(s) s.scrollLeft += ((s.getBoundingClientRect().width + 16) * direction); }
+</script>
 </body>
 </html>
